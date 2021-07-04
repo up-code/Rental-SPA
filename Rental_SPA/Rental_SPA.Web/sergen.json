@@ -1,8 +1,69 @@
-﻿{
+{
   "RootNamespace": "Rental_SPA",
   "ServerTypings": {
     "LocalTexts": true
   },
+  "Connections": [
+    {
+      "Key": "Default",
+      "Tables": [
+        {
+          "Tablename": "dbo.Arriendos",
+          "Identifier": "Arriendos",
+          "Module": "Gestion",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.Atributos",
+          "Identifier": "Atributos",
+          "Module": "Gestion",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.Clientes",
+          "Identifier": "Clientes",
+          "Module": "Gestion",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.Nosotros",
+          "Identifier": "Nosotros",
+          "Module": "Sitio",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.ProductoDet",
+          "Identifier": "ProductoDetalle",
+          "Module": "Gestion",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.Productos",
+          "Identifier": "Productos",
+          "Module": "Gestion",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.Slider",
+          "Identifier": "Slider",
+          "Module": "Sitio",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.Tipos_Adicionales",
+          "Identifier": "TiposAdicionales",
+          "Module": "Gestion",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.Tipo_Arriendo",
+          "Identifier": "TipoArriendo",
+          "Module": "Gestion",
+          "PermissionKey": "Administration:General"
+        }
+      ]
+    }
+  ],
   "UpgradeInfo": {
     "InitialType": "Community",
     "InitialVersion": "5.0.24.0"
