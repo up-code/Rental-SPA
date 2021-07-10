@@ -56,7 +56,7 @@ namespace Rental_SPA
 
                 public static class Login
                 {
-                    public static LocalText FormTitle = "Welcome to SERENE (Serenity Application Template)";
+                    public static LocalText FormTitle = "Bienvenido al Administrador (Administración y Gestión)";
                     public static LocalText SignInButton = "Sign In";
                     public static LocalText ForgotPassword = "Forgot password?";
                     public static LocalText SignUpButton = "Register a new account";
@@ -109,8 +109,8 @@ namespace Rental_SPA
             public static class Dashboard
             {
                 public static LocalText ContentDescription =
-                    "a sample with random data (from free <em><a href = \"https://almsaeedstudio.com/\" target= \"_blank\">" +
-                    "AdminLTE theme</a></em>)";
+                    "Servicio Realizado por ( <em><a href = \"https://upcode.cl/\" target= \"_blank\">" +
+                    "UP Code E.I.R.L.</a></em>)";
             }
 
             public static class BasicProgressDialog

@@ -10,7 +10,7 @@ namespace Rental_SPA.Sitio.Entities
 {
     [ConnectionKey("Default"), Module("Sitio"), TableName("[dbo].[Slider]")]
     [DisplayName("Slider"), InstanceName("Slider")]
-    [ReadPermission("Administration:General")]
+    [ReadPermission("*")]
     [ModifyPermission("Administration:General")]
     public sealed class SliderRow : Row<SliderRow.RowFields>, IIdRow, INameRow
     {
@@ -29,13 +29,15 @@ namespace Rental_SPA.Sitio.Entities
         }
 
         [DisplayName("Sub Titulo"), NotNull]
+        [HtmlContentEditor(Rows = 5)]
         public String SubTitulo
         {
             get => fields.SubTitulo[this];
             set => fields.SubTitulo[this] = value;
         }
-
+        
         [DisplayName("Foto"), Size(350), NotNull]
+        [FileUploadEditor(FilenameFormat = "Slider/{1:00000}/{0:000}_{4}")]
         public String Foto
         {
             get => fields.Foto[this];

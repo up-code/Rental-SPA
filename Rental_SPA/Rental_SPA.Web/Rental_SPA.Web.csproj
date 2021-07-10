@@ -10,9 +10,12 @@
     <DotNetSergen Condition="Exists('$(DotNetSergenExe)')">$(DotNetSergenExe)</DotNetSergen>
     <CommonSrc>..\..\common-features\src\</CommonSrc>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <UserSecretsId>af778e1d-280d-4769-9511-c93ab497450a</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\**\*.sql" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
+    <None Remove="Modules\Sitio\Nosotros\NosotrosComponent.tsx" />
+    <None Remove="Modules\Sitio\Slider\SliderComponent.tsx" />
     <None Update="wwwroot\**\*">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </None>

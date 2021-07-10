@@ -1,5 +1,5 @@
 /**
-* Template Name: Ronnie.Web - v2.4.0
+* Template Name: Rental_SPA.Web - v2.4.0
 * Template URL: https://bootstrapmade.com/mamba-one-page-bootstrap-template-free/
 * Author: UPCode.cl
 * License: https://bootstrapmade.com/license/

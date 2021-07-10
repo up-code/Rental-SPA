@@ -10,7 +10,7 @@ namespace Rental_SPA.Sitio.Entities
 {
     [ConnectionKey("Default"), Module("Sitio"), TableName("[dbo].[Nosotros]")]
     [DisplayName("Nosotros"), InstanceName("Nosotros")]
-    [ReadPermission("Administration:General")]
+    [ReadPermission("*")]
     [ModifyPermission("Administration:General")]
     public sealed class NosotrosRow : Row<NosotrosRow.RowFields>, IIdRow, INameRow
     {
@@ -48,6 +48,13 @@ namespace Rental_SPA.Sitio.Entities
             get => fields.Icono[this];
             set => fields.Icono[this] = value;
         }
+        [DisplayName("Foto"), Column("Foto"), Size(50)]
+        [ImageUploadEditor(FilenameFormat = "Nosotros/{1:00000}/{0:000}_{4}")]
+        public String Foto
+        {
+            get => fields.Foto[this];
+            set => fields.Foto[this] = value;
+        }
 
         public NosotrosRow()
             : base()
@@ -66,6 +73,7 @@ namespace Rental_SPA.Sitio.Entities
             public StringField Body;
             public StringField Comtario;
             public StringField Icono;
+            public StringField Foto;
         }
     }
 }

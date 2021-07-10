@@ -20,7 +20,8 @@ namespace Rental_SPA.Migrations.DefaultDB
             .WithColumn("Titulo").AsString(100).NotNullable()
             .WithColumn("body").AsString(int.MaxValue).NotNullable()
             .WithColumn("comtario").AsString(300).NotNullable()
-            .WithColumn("icono").AsString(50).Nullable());
+            .WithColumn("icono").AsString(50).Nullable()
+            .WithColumn("Foto").AsString(500).NotNullable());
 
             //Tabla para tipos de arriendos
             this.CreateTableWithId32("Tipo_Arriendo", "Id", a => a

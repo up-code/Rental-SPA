@@ -19,5 +19,6 @@ namespace Rental_SPA.Sitio.Columns
         public String Body { get; set; }
         public String Comtario { get; set; }
         public String Icono { get; set; }
+        public String Foto { get; set; }
     }
 }

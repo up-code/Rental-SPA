@@ -1,26 +1,35 @@
-﻿
-namespace Rental_SPA.Sitio {
-    export class NosotrosForm extends Serenity.PrefixedContext {
-        static formKey = 'Sitio.Nosotros';
-    }
-
+﻿namespace Rental_SPA.Sitio {
     export interface NosotrosForm {
         Titulo: Serenity.StringEditor;
-        Body: Serenity.StringEditor;
+        Body: Serenity.HtmlContentEditor;
         Comtario: Serenity.StringEditor;
         Icono: Serenity.StringEditor;
+        Foto: Serenity.ImageUploadEditor;
     }
 
-    [,
-        ['Titulo', () => Serenity.StringEditor],
-        ['Body', () => Serenity.StringEditor],
-        ['Comtario', () => Serenity.StringEditor],
-        ['Icono', () => Serenity.StringEditor]
-    ].forEach(x => Object.defineProperty(NosotrosForm.prototype, <string>x[0], {
-        get: function () {
-            return this.w(x[0], (x[1] as any)());
-        },
-        enumerable: true,
-        configurable: true
-    }));
+    export class NosotrosForm extends Serenity.PrefixedContext {
+        static formKey = 'Sitio.Nosotros';
+        private static init: boolean;
+
+        constructor(prefix: string) {
+            super(prefix);
+
+            if (!NosotrosForm.init)  {
+                NosotrosForm.init = true;
+
+                var s = Serenity;
+                var w0 = s.StringEditor;
+                var w1 = s.HtmlContentEditor;
+                var w2 = s.ImageUploadEditor;
+
+                Q.initFormType(NosotrosForm, [
+                    'Titulo', w0,
+                    'Body', w1,
+                    'Comtario', w0,
+                    'Icono', w0,
+                    'Foto', w2
+                ]);
+            }
+        }
+    }
 }

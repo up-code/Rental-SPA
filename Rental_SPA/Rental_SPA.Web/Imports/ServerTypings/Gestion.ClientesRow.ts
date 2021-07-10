@@ -1,5 +1,4 @@
-﻿
-namespace Rental_SPA.Gestion {
+﻿namespace Rental_SPA.Gestion {
     export interface ClientesRow {
         Id?: number;
         Rut?: string;
@@ -20,26 +19,15 @@ namespace Rental_SPA.Gestion {
         export const readPermission = 'Administration:General';
         export const updatePermission = 'Administration:General';
 
-        export namespace Fields {
-            export declare const Id;
-            export declare const Rut;
-            export declare const RazonSocial;
-            export declare const NombreFantasia;
-            export declare const Direccion;
-            export declare const Ciudad;
-            export declare const Telefono;
-            export declare const EMail;
+        export declare const enum Fields {
+            Id = "Id",
+            Rut = "Rut",
+            RazonSocial = "RazonSocial",
+            NombreFantasia = "NombreFantasia",
+            Direccion = "Direccion",
+            Ciudad = "Ciudad",
+            Telefono = "Telefono",
+            EMail = "EMail"
         }
-
-        [
-            'Id',
-            'Rut',
-            'RazonSocial',
-            'NombreFantasia',
-            'Direccion',
-            'Ciudad',
-            'Telefono',
-            'EMail'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }

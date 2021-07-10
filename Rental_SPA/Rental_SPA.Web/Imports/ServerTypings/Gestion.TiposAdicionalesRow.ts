@@ -1,5 +1,4 @@
-﻿
-namespace Rental_SPA.Gestion {
+﻿namespace Rental_SPA.Gestion {
     export interface TiposAdicionalesRow {
         Id?: number;
         Descripcion?: string;
@@ -18,22 +17,13 @@ namespace Rental_SPA.Gestion {
         export const readPermission = 'Administration:General';
         export const updatePermission = 'Administration:General';
 
-        export namespace Fields {
-            export declare const Id;
-            export declare const Descripcion;
-            export declare const Titulo;
-            export declare const Orden;
-            export declare const MostrarPorcentaje;
-            export declare const MostrarImporte;
+        export declare const enum Fields {
+            Id = "Id",
+            Descripcion = "Descripcion",
+            Titulo = "Titulo",
+            Orden = "Orden",
+            MostrarPorcentaje = "MostrarPorcentaje",
+            MostrarImporte = "MostrarImporte"
         }
-
-        [
-            'Id',
-            'Descripcion',
-            'Titulo',
-            'Orden',
-            'MostrarPorcentaje',
-            'MostrarImporte'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }

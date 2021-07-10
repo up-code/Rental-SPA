@@ -1,5 +1,4 @@
-﻿
-namespace Rental_SPA.Gestion {
+﻿namespace Rental_SPA.Gestion {
     export namespace AtributosService {
         export const baseUrl = 'Gestion/Atributos';
 
@@ -9,12 +8,12 @@ namespace Rental_SPA.Gestion {
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<AtributosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<AtributosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
-        export namespace Methods {
-            export declare const Create: string;
-            export declare const Update: string;
-            export declare const Delete: string;
-            export declare const Retrieve: string;
-            export declare const List: string;
+        export declare const enum Methods {
+            Create = "Gestion/Atributos/Create",
+            Update = "Gestion/Atributos/Update",
+            Delete = "Gestion/Atributos/Delete",
+            Retrieve = "Gestion/Atributos/Retrieve",
+            List = "Gestion/Atributos/List"
         }
 
         [
@@ -24,10 +23,9 @@ namespace Rental_SPA.Gestion {
             'Retrieve', 
             'List'
         ].forEach(x => {
-            (<any>AtributosService)[x] = function (r, s, o) { 
-                return Q.serviceRequest(baseUrl + '/' + x, r, s, o); 
+            (<any>AtributosService)[x] = function (r, s, o) {
+                return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
             };
-            (<any>Methods)[x] = baseUrl + '/' + x;
         });
     }
 }

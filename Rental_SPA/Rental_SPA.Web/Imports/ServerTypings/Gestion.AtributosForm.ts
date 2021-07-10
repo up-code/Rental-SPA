@@ -1,9 +1,4 @@
-﻿
-namespace Rental_SPA.Gestion {
-    export class AtributosForm extends Serenity.PrefixedContext {
-        static formKey = 'Gestion.Atributos';
-    }
-
+﻿namespace Rental_SPA.Gestion {
     export interface AtributosForm {
         Descripcion: Serenity.StringEditor;
         Codigo: Serenity.StringEditor;
@@ -11,16 +6,27 @@ namespace Rental_SPA.Gestion {
         Importe: Serenity.DecimalEditor;
     }
 
-    [,
-        ['Descripcion', () => Serenity.StringEditor],
-        ['Codigo', () => Serenity.StringEditor],
-        ['Porciento', () => Serenity.DecimalEditor],
-        ['Importe', () => Serenity.DecimalEditor]
-    ].forEach(x => Object.defineProperty(AtributosForm.prototype, <string>x[0], {
-        get: function () {
-            return this.w(x[0], (x[1] as any)());
-        },
-        enumerable: true,
-        configurable: true
-    }));
+    export class AtributosForm extends Serenity.PrefixedContext {
+        static formKey = 'Gestion.Atributos';
+        private static init: boolean;
+
+        constructor(prefix: string) {
+            super(prefix);
+
+            if (!AtributosForm.init)  {
+                AtributosForm.init = true;
+
+                var s = Serenity;
+                var w0 = s.StringEditor;
+                var w1 = s.DecimalEditor;
+
+                Q.initFormType(AtributosForm, [
+                    'Descripcion', w0,
+                    'Codigo', w0,
+                    'Porciento', w1,
+                    'Importe', w1
+                ]);
+            }
+        }
+    }
 }

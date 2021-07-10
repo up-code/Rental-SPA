@@ -1,5 +1,4 @@
-﻿
-namespace Rental_SPA.Gestion {
+﻿namespace Rental_SPA.Gestion {
     export interface ArriendosRow {
         Id?: number;
         DireccionObra?: string;
@@ -25,36 +24,20 @@ namespace Rental_SPA.Gestion {
         export const readPermission = 'Administration:General';
         export const updatePermission = 'Administration:General';
 
-        export namespace Fields {
-            export declare const Id;
-            export declare const DireccionObra;
-            export declare const Region;
-            export declare const Ciudad;
-            export declare const IdCliente;
-            export declare const IdProducto;
-            export declare const Garantia;
-            export declare const ConGarantia;
-            export declare const FechaInicio;
-            export declare const FechaDevolucion;
-            export declare const Neto;
-            export declare const Iva;
-            export declare const Total;
+        export declare const enum Fields {
+            Id = "Id",
+            DireccionObra = "DireccionObra",
+            Region = "Region",
+            Ciudad = "Ciudad",
+            IdCliente = "IdCliente",
+            IdProducto = "IdProducto",
+            Garantia = "Garantia",
+            ConGarantia = "ConGarantia",
+            FechaInicio = "FechaInicio",
+            FechaDevolucion = "FechaDevolucion",
+            Neto = "Neto",
+            Iva = "Iva",
+            Total = "Total"
         }
-
-        [
-            'Id',
-            'DireccionObra',
-            'Region',
-            'Ciudad',
-            'IdCliente',
-            'IdProducto',
-            'Garantia',
-            'ConGarantia',
-            'FechaInicio',
-            'FechaDevolucion',
-            'Neto',
-            'Iva',
-            'Total'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }

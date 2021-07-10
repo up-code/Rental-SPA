@@ -1,5 +1,4 @@
-﻿
-namespace Rental_SPA.Sitio {
+﻿namespace Rental_SPA.Sitio {
     export interface SliderRow {
         Id?: number;
         Titulo?: string;
@@ -13,21 +12,14 @@ namespace Rental_SPA.Sitio {
         export const localTextPrefix = 'Sitio.Slider';
         export const deletePermission = 'Administration:General';
         export const insertPermission = 'Administration:General';
-        export const readPermission = 'Administration:General';
+        export const readPermission = '*';
         export const updatePermission = 'Administration:General';
 
-        export namespace Fields {
-            export declare const Id;
-            export declare const Titulo;
-            export declare const SubTitulo;
-            export declare const Foto;
+        export declare const enum Fields {
+            Id = "Id",
+            Titulo = "Titulo",
+            SubTitulo = "SubTitulo",
+            Foto = "Foto"
         }
-
-        [
-            'Id',
-            'Titulo',
-            'SubTitulo',
-            'Foto'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }

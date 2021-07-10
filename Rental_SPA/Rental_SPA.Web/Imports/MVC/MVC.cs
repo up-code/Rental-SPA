@@ -46,6 +46,45 @@ namespace MVC
             public const string ValidationError = "~/Views/Errors/ValidationError.cshtml";
         }
 
+        public static class Gestion
+        {
+            public static class Arriendos
+            {
+                public const string ArriendosIndex = "~/Modules/Gestion/Arriendos/ArriendosIndex.cshtml";
+            }
+
+            public static class Atributos
+            {
+                public const string AtributosIndex = "~/Modules/Gestion/Atributos/AtributosIndex.cshtml";
+            }
+
+            public static class Clientes
+            {
+                public const string ClientesIndex = "~/Modules/Gestion/Clientes/ClientesIndex.cshtml";
+            }
+
+            public static class ProductoDetalle
+            {
+                public const string ProductoDetalleIndex = "~/Modules/Gestion/ProductoDetalle/ProductoDetalleIndex.cshtml";
+            }
+
+            public static class Productos
+            {
+                public const string ProductosIndex = "~/Modules/Gestion/Productos/ProductosIndex.cshtml";
+            }
+
+            public static class TipoArriendo
+            {
+                public const string TipoArriendoIndex = "~/Modules/Gestion/TipoArriendo/TipoArriendoIndex.cshtml";
+            }
+
+            public static class TiposAdicionales
+            {
+                public const string TiposAdicionalesIndex = "~/Modules/Gestion/TiposAdicionales/TiposAdicionalesIndex.cshtml";
+            }
+
+        }
+
         public static class Membership
         {
             public static class Account
@@ -95,6 +134,16 @@ namespace MVC
         public static class Sitio
         {
             public const string Index = "~/Views/Sitio/Index.cshtml";
+            public static class Nosotros
+            {
+                public const string NosotrosIndex = "~/Modules/Sitio/Nosotros/NosotrosIndex.cshtml";
+            }
+
+            public static class Slider
+            {
+                public const string SliderIndex = "~/Modules/Sitio/Slider/SliderIndex.cshtml";
+            }
+
         }
 
     }

@@ -8092,3 +8092,57 @@ section.content > .s-DataGrid {
   font-style: italic;
   color: #966;
 }
+.s-Sitio-SliderDialog > .size {
+  width: 650px;
+}
+.s-Sitio-SliderDialog .caption {
+  width: 150px;
+}
+.s-Sitio-NosotrosDialog > .size {
+  width: 650px;
+}
+.s-Sitio-NosotrosDialog .caption {
+  width: 150px;
+}
+.s-Gestion-ProductosDialog > .size {
+  width: 650px;
+}
+.s-Gestion-ProductosDialog .caption {
+  width: 150px;
+}
+.s-Gestion-ProductoDetalleDialog > .size {
+  width: 650px;
+}
+.s-Gestion-ProductoDetalleDialog .caption {
+  width: 150px;
+}
+.s-Gestion-ArriendosDialog > .size {
+  width: 650px;
+}
+.s-Gestion-ArriendosDialog .caption {
+  width: 150px;
+}
+.s-Gestion-AtributosDialog > .size {
+  width: 650px;
+}
+.s-Gestion-AtributosDialog .caption {
+  width: 150px;
+}
+.s-Gestion-ClientesDialog > .size {
+  width: 650px;
+}
+.s-Gestion-ClientesDialog .caption {
+  width: 150px;
+}
+.s-Gestion-TipoArriendoDialog > .size {
+  width: 650px;
+}
+.s-Gestion-TipoArriendoDialog .caption {
+  width: 150px;
+}
+.s-Gestion-TiposAdicionalesDialog > .size {
+  width: 650px;
+}
+.s-Gestion-TiposAdicionalesDialog .caption {
+  width: 150px;
+}

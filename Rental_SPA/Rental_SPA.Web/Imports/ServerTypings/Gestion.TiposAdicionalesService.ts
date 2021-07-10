@@ -1,5 +1,4 @@
-﻿
-namespace Rental_SPA.Gestion {
+﻿namespace Rental_SPA.Gestion {
     export namespace TiposAdicionalesService {
         export const baseUrl = 'Gestion/TiposAdicionales';
 
@@ -9,12 +8,12 @@ namespace Rental_SPA.Gestion {
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TiposAdicionalesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TiposAdicionalesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
-        export namespace Methods {
-            export declare const Create: string;
-            export declare const Update: string;
-            export declare const Delete: string;
-            export declare const Retrieve: string;
-            export declare const List: string;
+        export declare const enum Methods {
+            Create = "Gestion/TiposAdicionales/Create",
+            Update = "Gestion/TiposAdicionales/Update",
+            Delete = "Gestion/TiposAdicionales/Delete",
+            Retrieve = "Gestion/TiposAdicionales/Retrieve",
+            List = "Gestion/TiposAdicionales/List"
         }
 
         [
@@ -24,10 +23,9 @@ namespace Rental_SPA.Gestion {
             'Retrieve', 
             'List'
         ].forEach(x => {
-            (<any>TiposAdicionalesService)[x] = function (r, s, o) { 
-                return Q.serviceRequest(baseUrl + '/' + x, r, s, o); 
+            (<any>TiposAdicionalesService)[x] = function (r, s, o) {
+                return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
             };
-            (<any>Methods)[x] = baseUrl + '/' + x;
         });
     }
 }

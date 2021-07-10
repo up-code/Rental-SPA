@@ -1,5 +1,6 @@
 ﻿/// <reference types="jquery" />
 /// <reference types="jqueryui" />
+/// <reference types="react" />
 declare namespace Rental_SPA.Administration {
 }
 declare namespace Rental_SPA.Administration {
@@ -451,6 +452,446 @@ declare namespace Rental_SPA {
         ErrorList?: string[];
     }
 }
+declare namespace Rental_SPA.Gestion {
+}
+declare namespace Rental_SPA.Gestion {
+    interface ArriendosForm {
+        DireccionObra: Serenity.StringEditor;
+        Region: Serenity.IntegerEditor;
+        Ciudad: Serenity.StringEditor;
+        IdCliente: Serenity.IntegerEditor;
+        IdProducto: Serenity.IntegerEditor;
+        Garantia: Serenity.DecimalEditor;
+        ConGarantia: Serenity.BooleanEditor;
+        FechaInicio: Serenity.DateEditor;
+        FechaDevolucion: Serenity.DateEditor;
+        Neto: Serenity.DecimalEditor;
+        Iva: Serenity.DecimalEditor;
+        Total: Serenity.DecimalEditor;
+    }
+    class ArriendosForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    interface ArriendosRow {
+        Id?: number;
+        DireccionObra?: string;
+        Region?: number;
+        Ciudad?: string;
+        IdCliente?: number;
+        IdProducto?: number;
+        Garantia?: number;
+        ConGarantia?: boolean;
+        FechaInicio?: string;
+        FechaDevolucion?: string;
+        Neto?: number;
+        Iva?: number;
+        Total?: number;
+    }
+    namespace ArriendosRow {
+        const idProperty = "Id";
+        const nameProperty = "DireccionObra";
+        const localTextPrefix = "Gestion.Arriendos";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            Id = "Id",
+            DireccionObra = "DireccionObra",
+            Region = "Region",
+            Ciudad = "Ciudad",
+            IdCliente = "IdCliente",
+            IdProducto = "IdProducto",
+            Garantia = "Garantia",
+            ConGarantia = "ConGarantia",
+            FechaInicio = "FechaInicio",
+            FechaDevolucion = "FechaDevolucion",
+            Neto = "Neto",
+            Iva = "Iva",
+            Total = "Total"
+        }
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    namespace ArriendosService {
+        const baseUrl = "Gestion/Arriendos";
+        function Create(request: Serenity.SaveRequest<ArriendosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ArriendosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ArriendosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ArriendosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Gestion/Arriendos/Create",
+            Update = "Gestion/Arriendos/Update",
+            Delete = "Gestion/Arriendos/Delete",
+            Retrieve = "Gestion/Arriendos/Retrieve",
+            List = "Gestion/Arriendos/List"
+        }
+    }
+}
+declare namespace Rental_SPA.Gestion {
+}
+declare namespace Rental_SPA.Gestion {
+    interface AtributosForm {
+        Descripcion: Serenity.StringEditor;
+        Codigo: Serenity.StringEditor;
+        Porciento: Serenity.DecimalEditor;
+        Importe: Serenity.DecimalEditor;
+    }
+    class AtributosForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    interface AtributosRow {
+        Id?: number;
+        Descripcion?: string;
+        Codigo?: string;
+        Porciento?: number;
+        Importe?: number;
+    }
+    namespace AtributosRow {
+        const idProperty = "Id";
+        const nameProperty = "Descripcion";
+        const localTextPrefix = "Gestion.Atributos";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            Id = "Id",
+            Descripcion = "Descripcion",
+            Codigo = "Codigo",
+            Porciento = "Porciento",
+            Importe = "Importe"
+        }
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    namespace AtributosService {
+        const baseUrl = "Gestion/Atributos";
+        function Create(request: Serenity.SaveRequest<AtributosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<AtributosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<AtributosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<AtributosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Gestion/Atributos/Create",
+            Update = "Gestion/Atributos/Update",
+            Delete = "Gestion/Atributos/Delete",
+            Retrieve = "Gestion/Atributos/Retrieve",
+            List = "Gestion/Atributos/List"
+        }
+    }
+}
+declare namespace Rental_SPA.Gestion {
+}
+declare namespace Rental_SPA.Gestion {
+    interface ClientesForm {
+        Rut: Serenity.StringEditor;
+        RazonSocial: Serenity.StringEditor;
+        NombreFantasia: Serenity.StringEditor;
+        Direccion: Serenity.StringEditor;
+        Ciudad: Serenity.StringEditor;
+        Telefono: Serenity.StringEditor;
+        EMail: Serenity.StringEditor;
+    }
+    class ClientesForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    interface ClientesRow {
+        Id?: number;
+        Rut?: string;
+        RazonSocial?: string;
+        NombreFantasia?: string;
+        Direccion?: string;
+        Ciudad?: string;
+        Telefono?: string;
+        EMail?: string;
+    }
+    namespace ClientesRow {
+        const idProperty = "Id";
+        const nameProperty = "Rut";
+        const localTextPrefix = "Gestion.Clientes";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            Id = "Id",
+            Rut = "Rut",
+            RazonSocial = "RazonSocial",
+            NombreFantasia = "NombreFantasia",
+            Direccion = "Direccion",
+            Ciudad = "Ciudad",
+            Telefono = "Telefono",
+            EMail = "EMail"
+        }
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    namespace ClientesService {
+        const baseUrl = "Gestion/Clientes";
+        function Create(request: Serenity.SaveRequest<ClientesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ClientesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ClientesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ClientesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Gestion/Clientes/Create",
+            Update = "Gestion/Clientes/Update",
+            Delete = "Gestion/Clientes/Delete",
+            Retrieve = "Gestion/Clientes/Retrieve",
+            List = "Gestion/Clientes/List"
+        }
+    }
+}
+declare namespace Rental_SPA.Gestion {
+}
+declare namespace Rental_SPA.Gestion {
+    interface ProductoDetalleForm {
+        IdProducto: Serenity.IntegerEditor;
+        IdAtributo: Serenity.IntegerEditor;
+        IdTipoAdicional: Serenity.IntegerEditor;
+        Valor: Serenity.DecimalEditor;
+    }
+    class ProductoDetalleForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    interface ProductoDetalleRow {
+        Id?: number;
+        IdProducto?: number;
+        IdAtributo?: number;
+        IdTipoAdicional?: number;
+        Valor?: number;
+    }
+    namespace ProductoDetalleRow {
+        const idProperty = "Id";
+        const localTextPrefix = "Gestion.ProductoDetalle";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            Id = "Id",
+            IdProducto = "IdProducto",
+            IdAtributo = "IdAtributo",
+            IdTipoAdicional = "IdTipoAdicional",
+            Valor = "Valor"
+        }
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    namespace ProductoDetalleService {
+        const baseUrl = "Gestion/ProductoDetalle";
+        function Create(request: Serenity.SaveRequest<ProductoDetalleRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ProductoDetalleRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ProductoDetalleRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ProductoDetalleRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Gestion/ProductoDetalle/Create",
+            Update = "Gestion/ProductoDetalle/Update",
+            Delete = "Gestion/ProductoDetalle/Delete",
+            Retrieve = "Gestion/ProductoDetalle/Retrieve",
+            List = "Gestion/ProductoDetalle/List"
+        }
+    }
+}
+declare namespace Rental_SPA.Gestion {
+}
+declare namespace Rental_SPA.Gestion {
+    interface ProductosForm {
+        Nombre: Serenity.StringEditor;
+        Foto: Serenity.StringEditor;
+        Cantidad: Serenity.IntegerEditor;
+        Precio: Serenity.DecimalEditor;
+        Iva: Serenity.DecimalEditor;
+        Activo: Serenity.BooleanEditor;
+        Garantia: Serenity.DecimalEditor;
+        IdTipoArriendo: Serenity.IntegerEditor;
+    }
+    class ProductosForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    interface ProductosRow {
+        Id?: number;
+        Nombre?: string;
+        Foto?: string;
+        Cantidad?: number;
+        Precio?: number;
+        Iva?: number;
+        Activo?: boolean;
+        Garantia?: number;
+        IdTipoArriendo?: number;
+    }
+    namespace ProductosRow {
+        const idProperty = "Id";
+        const nameProperty = "Nombre";
+        const localTextPrefix = "Gestion.Productos";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            Id = "Id",
+            Nombre = "Nombre",
+            Foto = "Foto",
+            Cantidad = "Cantidad",
+            Precio = "Precio",
+            Iva = "Iva",
+            Activo = "Activo",
+            Garantia = "Garantia",
+            IdTipoArriendo = "IdTipoArriendo"
+        }
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    namespace ProductosService {
+        const baseUrl = "Gestion/Productos";
+        function Create(request: Serenity.SaveRequest<ProductosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ProductosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ProductosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ProductosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Gestion/Productos/Create",
+            Update = "Gestion/Productos/Update",
+            Delete = "Gestion/Productos/Delete",
+            Retrieve = "Gestion/Productos/Retrieve",
+            List = "Gestion/Productos/List"
+        }
+    }
+}
+declare namespace Rental_SPA.Gestion {
+}
+declare namespace Rental_SPA.Gestion {
+    interface TipoArriendoForm {
+        Tipo: Serenity.StringEditor;
+        Codigo: Serenity.StringEditor;
+    }
+    class TipoArriendoForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    interface TipoArriendoRow {
+        Id?: number;
+        Tipo?: string;
+        Codigo?: string;
+    }
+    namespace TipoArriendoRow {
+        const idProperty = "Id";
+        const nameProperty = "Tipo";
+        const localTextPrefix = "Gestion.TipoArriendo";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            Id = "Id",
+            Tipo = "Tipo",
+            Codigo = "Codigo"
+        }
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    namespace TipoArriendoService {
+        const baseUrl = "Gestion/TipoArriendo";
+        function Create(request: Serenity.SaveRequest<TipoArriendoRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<TipoArriendoRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TipoArriendoRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TipoArriendoRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Gestion/TipoArriendo/Create",
+            Update = "Gestion/TipoArriendo/Update",
+            Delete = "Gestion/TipoArriendo/Delete",
+            Retrieve = "Gestion/TipoArriendo/Retrieve",
+            List = "Gestion/TipoArriendo/List"
+        }
+    }
+}
+declare namespace Rental_SPA.Gestion {
+}
+declare namespace Rental_SPA.Gestion {
+    interface TiposAdicionalesForm {
+        Descripcion: Serenity.StringEditor;
+        Titulo: Serenity.StringEditor;
+        Orden: Serenity.IntegerEditor;
+        MostrarPorcentaje: Serenity.BooleanEditor;
+        MostrarImporte: Serenity.BooleanEditor;
+    }
+    class TiposAdicionalesForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    interface TiposAdicionalesRow {
+        Id?: number;
+        Descripcion?: string;
+        Titulo?: string;
+        Orden?: number;
+        MostrarPorcentaje?: boolean;
+        MostrarImporte?: boolean;
+    }
+    namespace TiposAdicionalesRow {
+        const idProperty = "Id";
+        const nameProperty = "Descripcion";
+        const localTextPrefix = "Gestion.TiposAdicionales";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            Id = "Id",
+            Descripcion = "Descripcion",
+            Titulo = "Titulo",
+            Orden = "Orden",
+            MostrarPorcentaje = "MostrarPorcentaje",
+            MostrarImporte = "MostrarImporte"
+        }
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    namespace TiposAdicionalesService {
+        const baseUrl = "Gestion/TiposAdicionales";
+        function Create(request: Serenity.SaveRequest<TiposAdicionalesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<TiposAdicionalesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TiposAdicionalesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TiposAdicionalesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Gestion/TiposAdicionales/Create",
+            Update = "Gestion/TiposAdicionales/Update",
+            Delete = "Gestion/TiposAdicionales/Delete",
+            Retrieve = "Gestion/TiposAdicionales/Retrieve",
+            List = "Gestion/TiposAdicionales/List"
+        }
+    }
+}
 declare namespace Rental_SPA {
     interface GetNextNumberRequest extends Serenity.ServiceRequest {
         Prefix?: string;
@@ -561,6 +1002,120 @@ declare namespace Rental_SPA {
         Permissions?: {
             [key: string]: boolean;
         };
+    }
+}
+declare namespace Rental_SPA.Sitio {
+}
+declare namespace Rental_SPA.Sitio {
+    interface NosotrosForm {
+        Titulo: Serenity.StringEditor;
+        Body: Serenity.HtmlContentEditor;
+        Comtario: Serenity.StringEditor;
+        Icono: Serenity.StringEditor;
+        Foto: Serenity.ImageUploadEditor;
+    }
+    class NosotrosForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Rental_SPA.Sitio {
+    interface NosotrosRow {
+        Id?: number;
+        Titulo?: string;
+        Body?: string;
+        Comtario?: string;
+        Icono?: string;
+        Foto?: string;
+    }
+    namespace NosotrosRow {
+        const idProperty = "Id";
+        const nameProperty = "Titulo";
+        const localTextPrefix = "Sitio.Nosotros";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "*";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            Id = "Id",
+            Titulo = "Titulo",
+            Body = "Body",
+            Comtario = "Comtario",
+            Icono = "Icono",
+            Foto = "Foto"
+        }
+    }
+}
+declare namespace Rental_SPA.Sitio {
+    namespace NosotrosService {
+        const baseUrl = "Sitio/Nosotros";
+        function Create(request: Serenity.SaveRequest<NosotrosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<NosotrosRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<NosotrosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<NosotrosRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Sitio/Nosotros/Create",
+            Update = "Sitio/Nosotros/Update",
+            Delete = "Sitio/Nosotros/Delete",
+            Retrieve = "Sitio/Nosotros/Retrieve",
+            List = "Sitio/Nosotros/List"
+        }
+    }
+}
+declare namespace Rental_SPA.Sitio {
+}
+declare namespace Rental_SPA.Sitio {
+    interface SliderForm {
+        Titulo: Serenity.StringEditor;
+        SubTitulo: Serenity.HtmlContentEditor;
+        Foto: Serenity.ImageUploadEditor;
+    }
+    class SliderForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Rental_SPA.Sitio {
+    interface SliderRow {
+        Id?: number;
+        Titulo?: string;
+        SubTitulo?: string;
+        Foto?: string;
+    }
+    namespace SliderRow {
+        const idProperty = "Id";
+        const nameProperty = "Titulo";
+        const localTextPrefix = "Sitio.Slider";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "*";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            Id = "Id",
+            Titulo = "Titulo",
+            SubTitulo = "SubTitulo",
+            Foto = "Foto"
+        }
+    }
+}
+declare namespace Rental_SPA.Sitio {
+    namespace SliderService {
+        const baseUrl = "Sitio/Slider";
+        function Create(request: Serenity.SaveRequest<SliderRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<SliderRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<SliderRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SliderRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Sitio/Slider/Create",
+            Update = "Sitio/Slider/Update",
+            Delete = "Sitio/Slider/Delete",
+            Retrieve = "Sitio/Slider/Retrieve",
+            List = "Sitio/Slider/List"
+        }
     }
 }
 declare namespace Rental_SPA.Texts {
@@ -996,6 +1551,173 @@ declare namespace Rental_SPA.Common {
         setItem(key: string, data: string): void;
     }
 }
+declare namespace Rental_SPA.Gestion {
+    class ArriendosDialog extends Serenity.EntityDialog<ArriendosRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: ArriendosForm;
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    class ArriendosGrid extends Serenity.EntityGrid<ArriendosRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ArriendosDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    class AtributosDialog extends Serenity.EntityDialog<AtributosRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: AtributosForm;
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    class AtributosGrid extends Serenity.EntityGrid<AtributosRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof AtributosDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    class ClientesDialog extends Serenity.EntityDialog<ClientesRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: ClientesForm;
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    class ClientesGrid extends Serenity.EntityGrid<ClientesRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ClientesDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    class ProductoDetalleDialog extends Serenity.EntityDialog<ProductoDetalleRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: ProductoDetalleForm;
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    class ProductoDetalleGrid extends Serenity.EntityGrid<ProductoDetalleRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ProductoDetalleDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    class ProductosDialog extends Serenity.EntityDialog<ProductosRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: ProductosForm;
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    class ProductosGrid extends Serenity.EntityGrid<ProductosRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ProductosDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    class TipoArriendoDialog extends Serenity.EntityDialog<TipoArriendoRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: TipoArriendoForm;
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    class TipoArriendoGrid extends Serenity.EntityGrid<TipoArriendoRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof TipoArriendoDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    class TiposAdicionalesDialog extends Serenity.EntityDialog<TiposAdicionalesRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: TiposAdicionalesForm;
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    class TiposAdicionalesGrid extends Serenity.EntityGrid<TiposAdicionalesRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof TiposAdicionalesDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
 declare namespace Rental_SPA.Membership {
     class LoginPanel extends Serenity.PropertyPanel<LoginRequest, any> {
         protected getFormKey(): string;
@@ -1029,6 +1751,73 @@ declare namespace Rental_SPA.Membership {
     class SignUpPanel extends Serenity.PropertyPanel<SignUpRequest, any> {
         protected getFormKey(): string;
         private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Rental_SPA.Sitio {
+    interface nosotrosParameters {
+        Items: NosotrosRow[];
+    }
+    export class NosotrosCard extends React.Component<nosotrosParameters> {
+        render(): React.ReactNode;
+    }
+    export {};
+}
+declare namespace Rental_SPA.Sitio {
+    class NosotrosDialog extends Serenity.EntityDialog<NosotrosRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: NosotrosForm;
+    }
+}
+declare namespace Rental_SPA.Sitio {
+    class NosotrosGrid extends Serenity.EntityGrid<NosotrosRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof NosotrosDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Rental_SPA.Sitio {
+    interface sliderParameter {
+        Items: SliderRow[];
+    }
+    export class SliderCard extends React.Component<sliderParameter> {
+        render(): React.ReactNode;
+        componentDidMount(): void;
+    }
+    export {};
+}
+declare namespace Rental_SPA.Sitio {
+    class SliderDialog extends Serenity.EntityDialog<SliderRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: SliderForm;
+    }
+}
+declare namespace Rental_SPA.Sitio {
+    class SliderGrid extends Serenity.EntityGrid<SliderRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SliderDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
         constructor(container: JQuery);
     }
 }

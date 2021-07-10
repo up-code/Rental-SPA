@@ -12,6 +12,7 @@ namespace Rental_SPA.Sitio.Forms
     [BasedOnRow(typeof(Entities.SliderRow), CheckNames = true)]
     public class SliderForm
     {
+        [Category ("Slider Cabecera")]
         public String Titulo { get; set; }
         public String SubTitulo { get; set; }
         public String Foto { get; set; }

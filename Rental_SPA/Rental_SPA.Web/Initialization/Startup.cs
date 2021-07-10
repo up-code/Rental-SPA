@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using Rental_SPA.AppServices;
+using Rental_SPA.Common;
 using Serenity;
 using Serenity.Abstractions;
 using Serenity.Data;
@@ -59,6 +60,7 @@ namespace Rental_SPA
             services.Configure<UploadSettings>(Configuration.GetSection(UploadSettings.SectionKey));
 
             services.Configure<EnvironmentSettings>(Configuration.GetSection(EnvironmentSettings.SectionKey));
+            services.Configure<SmtpSettings>(Configuration.GetSection(SmtpSettings.SectionKey));
 
             services.AddAntiforgery(options =>
             {
