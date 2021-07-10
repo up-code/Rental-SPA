@@ -29,7 +29,7 @@ namespace Rental_SPA.Sitio.Entities
         }
 
         [DisplayName("Sub Titulo"), NotNull]
-        [HtmlContentEditor(Rows = 5)]
+        [HtmlContentEditor(Rows = 8)]
         public String SubTitulo
         {
             get => fields.SubTitulo[this];

@@ -15,9 +15,10 @@ namespace Rental_SPA.Sitio.Forms
         [Category("Información de la Empresa")]
         public String Titulo { get; set; }
         [Category("Breve descripción de la empresa")]
-        [HtmlContentEditor(Rows = 4)]
+        [HtmlContentEditor(Rows = 8)]
         public String Body { get; set; }
         [Category("Breve reseña")]
+        [HtmlContentEditor(Rows = 8)]
         public String Comtario { get; set; }        
         public String Icono { get; set; }
         [Category("Foto destacada")]

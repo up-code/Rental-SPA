@@ -2,7 +2,7 @@
     export interface NosotrosForm {
         Titulo: Serenity.StringEditor;
         Body: Serenity.HtmlContentEditor;
-        Comtario: Serenity.StringEditor;
+        Comtario: Serenity.HtmlContentEditor;
         Icono: Serenity.StringEditor;
         Foto: Serenity.ImageUploadEditor;
     }
@@ -25,7 +25,7 @@
                 Q.initFormType(NosotrosForm, [
                     'Titulo', w0,
                     'Body', w1,
-                    'Comtario', w0,
+                    'Comtario', w1,
                     'Icono', w0,
                     'Foto', w2
                 ]);

@@ -1010,7 +1010,7 @@ declare namespace Rental_SPA.Sitio {
     interface NosotrosForm {
         Titulo: Serenity.StringEditor;
         Body: Serenity.HtmlContentEditor;
-        Comtario: Serenity.StringEditor;
+        Comtario: Serenity.HtmlContentEditor;
         Icono: Serenity.StringEditor;
         Foto: Serenity.ImageUploadEditor;
     }
