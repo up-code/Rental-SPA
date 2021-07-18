@@ -14,8 +14,8 @@
     <section id="topbar" class="d-none d-lg-block">
         <div class="container clearfix">
             <div class="contact-info float-left">
-                <i class="icofont-envelope"></i><a href="mailto:contact@example.com">contacto@rentalspa.cl</a>
-                <i class="icofont-phone"></i> +569 9089 5439
+                <i class="icofont-envelope"></i><a href="mailto:@Texts.Sitio.Email.ToString(Localizer)">@Texts.Sitio.Email.ToString(Localizer)</a>
+                <i class="icofont-phone"></i> +@Texts.Sitio.PhoneContact.ToString(Localizer)
             </div>
             <div class="social-links float-right">
                 <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
@@ -44,7 +44,7 @@
                     <li class="active"><a href="index.html">Inicio</a></li>
                     <li><a href="#about">Nosotros</a></li>
                     <li><a href="#services">Servicios</a></li>
-                    <!-- <li><a href="#portfolio">Blog</a></li> -->
+                    <li><a href="#clients">Nuestros Clientes</a></li>
                     <li><a href="#contact">Contacto</a></li>
                     <!-- <li>
                       <a href="#team" class="btn btn-outline-primary">Arrendar</a>
@@ -71,8 +71,8 @@
                         <p>
                             Dirección <br />
                             Caupolican 877, Los Vilos<br /><br />
-                            <strong>Teléfono:</strong> +569 9089 5439<br />
-                            <strong>E-mail:</strong> contacto@rentalspa.cl<br />
+                            <strong>Teléfono:</strong> +@Texts.Sitio.PhoneContact.ToString(Localizer)<br />
+                            <strong>E-mail:</strong> @Texts.Sitio.Email.ToString(Localizer)<br />
                         </p>
                         <div class="social-links mt-3">
                             <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -96,9 +96,9 @@
                             <li>
                                 <i class="bx bx-chevron-right"></i> <a href="#services">Servicios</a>
                             </li>
-                            <!-- <li>
-                              <i class="bx bx-chevron-right"></i> <a href="#">Blog</a>
-                            </li> -->
+                             <li>
+                              <i class="bx bx-chevron-right"></i> <a href="#clients">Nuestros Clientes</a>
+                            </li> 
                             <li>
                                 <i class="bx bx-chevron-right"></i> <a href="#contact">Contacto</a>
                             </li>

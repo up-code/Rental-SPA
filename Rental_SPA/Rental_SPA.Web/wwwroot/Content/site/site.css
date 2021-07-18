@@ -8104,6 +8104,12 @@ section.content > .s-DataGrid {
 .s-Sitio-NosotrosDialog .caption {
   width: 150px;
 }
+.s-Sitio-NuestrosClientesDialog > .size {
+  width: 650px;
+}
+.s-Sitio-NuestrosClientesDialog .caption {
+  width: 150px;
+}
 .s-Gestion-ProductosDialog > .size {
   width: 650px;
 }

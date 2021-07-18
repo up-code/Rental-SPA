@@ -87,7 +87,12 @@ namespace Rental_SPA.Migrations.DefaultDB
             .WithColumn("Neto").AsDouble().Nullable()
             .WithColumn("Iva").AsDouble().Nullable()
             .WithColumn("Total").AsDouble().Nullable());
-           
+
+            //Tabla Nuestros Clientes (Socios)
+            this.CreateTableWithId32("Nuestros_Clientes", "Id", c => c
+            .WithColumn("Logo").AsString(500).NotNullable()
+            .WithColumn("Nombre").AsString(300).NotNullable()
+            .WithColumn("Url").AsString(500).NotNullable());
 
 
            

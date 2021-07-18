@@ -32,6 +32,12 @@
           "PermissionKey": "Administration:General"
         },
         {
+          "Tablename": "dbo.Nuestros_Clientes",
+          "Identifier": "NuestrosClientes",
+          "Module": "Sitio",
+          "PermissionKey": "Administration:General"
+        },
+        {
           "Tablename": "dbo.ProductoDet",
           "Identifier": "ProductoDetalle",
           "Module": "Gestion",

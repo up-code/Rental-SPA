@@ -139,6 +139,11 @@ namespace MVC
                 public const string NosotrosIndex = "~/Modules/Sitio/Nosotros/NosotrosIndex.cshtml";
             }
 
+            public static class NuestrosClientes
+            {
+                public const string NuestrosClientesIndex = "~/Modules/Sitio/NuestrosClientes/NuestrosClientesIndex.cshtml";
+            }
+
             public static class Slider
             {
                 public const string SliderIndex = "~/Modules/Sitio/Slider/SliderIndex.cshtml";

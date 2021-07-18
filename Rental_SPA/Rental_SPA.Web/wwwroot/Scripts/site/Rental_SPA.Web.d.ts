@@ -1067,6 +1067,60 @@ declare namespace Rental_SPA.Sitio {
 declare namespace Rental_SPA.Sitio {
 }
 declare namespace Rental_SPA.Sitio {
+    interface NuestrosClientesForm {
+        Logo: Serenity.ImageUploadEditor;
+        Nombre: Serenity.StringEditor;
+        Url: Serenity.StringEditor;
+    }
+    class NuestrosClientesForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Rental_SPA.Sitio {
+    interface NuestrosClientesRow {
+        Id?: number;
+        Logo?: string;
+        Nombre?: string;
+        Url?: string;
+    }
+    namespace NuestrosClientesRow {
+        const idProperty = "Id";
+        const nameProperty = "Nombre";
+        const localTextPrefix = "Sitio.NuestrosClientes";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "*";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            Id = "Id",
+            Logo = "Logo",
+            Nombre = "Nombre",
+            Url = "Url"
+        }
+    }
+}
+declare namespace Rental_SPA.Sitio {
+    namespace NuestrosClientesService {
+        const baseUrl = "Sitio/NuestrosClientes";
+        function Create(request: Serenity.SaveRequest<NuestrosClientesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<NuestrosClientesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<NuestrosClientesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<NuestrosClientesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Sitio/NuestrosClientes/Create",
+            Update = "Sitio/NuestrosClientes/Update",
+            Delete = "Sitio/NuestrosClientes/Delete",
+            Retrieve = "Sitio/NuestrosClientes/Retrieve",
+            List = "Sitio/NuestrosClientes/List"
+        }
+    }
+}
+declare namespace Rental_SPA.Sitio {
+}
+declare namespace Rental_SPA.Sitio {
     interface SliderForm {
         Titulo: Serenity.StringEditor;
         SubTitulo: Serenity.HtmlContentEditor;
@@ -1780,6 +1834,39 @@ declare namespace Rental_SPA.Sitio {
     class NosotrosGrid extends Serenity.EntityGrid<NosotrosRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof NosotrosDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Rental_SPA.Sitio {
+    interface OurClientsParameters {
+        Items: NuestrosClientesRow[];
+    }
+    export class NuestrosClientesCard extends React.Component<OurClientsParameters> {
+        render(): React.ReactNode;
+    }
+    export {};
+}
+declare namespace Rental_SPA.Sitio {
+    class NuestrosClientesDialog extends Serenity.EntityDialog<NuestrosClientesRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: NuestrosClientesForm;
+    }
+}
+declare namespace Rental_SPA.Sitio {
+    class NuestrosClientesGrid extends Serenity.EntityGrid<NuestrosClientesRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof NuestrosClientesDialog;
         protected getIdProperty(): string;
         protected getInsertPermission(): string;
         protected getLocalTextPrefix(): string;

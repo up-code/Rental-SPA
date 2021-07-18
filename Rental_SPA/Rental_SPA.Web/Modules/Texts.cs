@@ -95,6 +95,16 @@ namespace Rental_SPA
             public static LocalText SiteTitle = "Rental_SPA";
         }
 
+        public static class Sitio
+        {
+            public static LocalText Services = "Servicios";
+            public static LocalText OurClients = "Nuestros Clientes";
+            public static LocalText Contact = "Contacto";
+            public static LocalText Address = "Caupolican 877, Los Vilos";
+            public static LocalText Email = "contacto@rentalspa.cl";
+            public static LocalText PhoneContact = "569 9089 5439";
+        }
+
         public static class Site
         {
             public static class AccessDenied
