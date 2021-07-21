@@ -18,13 +18,14 @@
                                 return <div key={i} className={i == 0 ? 'carousel-item active' : 'carousel-item'} style={{ backgroundImage: 'url("/upload/' + item.Foto + '")' }}>
                                     <div className="carousel-container">
                                         <div className="carousel-content container">
-                                            <h2 className="animate__animated animate__fadeInDown">{item.Titulo}</h2>
-                                            <p dangerouslySetInnerHTML={{ __html: item.SubTitulo }} className="animate__animated animate__fadeInUp">{}</p>
+                                          
+                                                <h2 className="animate__animated animate__fadeInDown">{item.Titulo}</h2>
+                                                <p dangerouslySetInnerHTML={{ __html: item.SubTitulo }} className="animate__animated animate__fadeInUp"></p>
+                                           
                                         </div>
                                     </div>
                                 </div>
-                            })}
-                            
+                            })}                            
 
                         </div>
 
@@ -49,28 +50,12 @@
 
             </>);
         }
-
+       
         componentDidMount() {
-            $("#recipeCarousel").carousel({
+            $("#heroCarousel").carousel({
                 interval: 4000
             });
 
-            $('.carousel .carousel-item').each(function () {
-                var minPerSlide = 3;
-                var next = $(this).next();
-                if (!next.length) {
-                    next = $(this).siblings(':first');
-                }
-                next.children(':first-child').clone().appendTo($(this));
-
-                for (var i = 0; i < minPerSlide; i++) {
-                    next = next.next();
-                    if (!next.length) {
-                        next = $(this).siblings(':first');
-                    }
-                    next.children(':first-child').clone().appendTo($(this));
-                }
-            });
         }
     }
 

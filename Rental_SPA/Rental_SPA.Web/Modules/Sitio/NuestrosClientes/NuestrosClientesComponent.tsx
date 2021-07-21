@@ -7,8 +7,10 @@
         render(): React.ReactNode {
             return (<>
                 {this.props.Items.map<React.ReactNode>((item, i) => {
-                    return (<div key={i} className="col-lg-12 col-md-4 col-6 d-flex">
-                        <a href={item.Url}><img src={"/upload/"+ item.Logo} className="img-fluid" title={ item.Nombre} /></a>
+                    return (<div key={i} className="col-md-3 align-items-center justify-content-center">
+                       
+                            <img src={"/upload/" + item.Logo} className="img-fluid" title={item.Nombre} />
+                       
                     </div>);
                     })
                 }

@@ -70,8 +70,8 @@
                         <h3>Rental SPA</h3>
                         <p>
                             Dirección <br />
-                            Caupolican 877, Los Vilos<br /><br />
-                            <strong>Teléfono:</strong> +@Texts.Sitio.PhoneContact.ToString(Localizer)<br />
+                            @Texts.Sitio.Address.ToString(Localizer)<br /><br />
+                            <strong>Teléfono:</strong> @Texts.Sitio.PhoneContact.ToString(Localizer)<br />
                             <strong>E-mail:</strong> @Texts.Sitio.Email.ToString(Localizer)<br />
                         </p>
                         <div class="social-links mt-3">
@@ -115,7 +115,7 @@
             <div class="credits">
                 <!-- All the links in the footer should remain intact. -->
                 <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Licensing information: https://upcode.cl/ -->
                 <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mamba-one-page-bootstrap-template-free/ -->
                 Designed by <a href="https://upcode.cl">UP Code</a>
             </div>
@@ -124,8 +124,8 @@
     <!-- End Footer -->
 
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-    @Html.ScriptBundle("Base")
-    @*@Html.ScriptBundle("Baselight")*@
+    @*@Html.ScriptBundle("Base")*@
+    @Html.ScriptBundle("Baselight")
     @Html.ScriptBundle("Sitio")
     @Html.ScriptBundle("Sitelight")
 
