@@ -8110,6 +8110,12 @@ section.content > .s-DataGrid {
 .s-Sitio-NuestrosClientesDialog .caption {
   width: 150px;
 }
+.s-Sitio-HistoriaDialog > .size {
+  width: 650px;
+}
+.s-Sitio-HistoriaDialog .caption {
+  width: 150px;
+}
 .s-Gestion-ProductosDialog > .size {
   width: 650px;
 }

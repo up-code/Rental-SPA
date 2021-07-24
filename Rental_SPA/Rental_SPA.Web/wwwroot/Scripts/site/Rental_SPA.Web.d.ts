@@ -1908,3 +1908,87 @@ declare namespace Rental_SPA.Sitio {
         constructor(container: JQuery);
     }
 }
+declare namespace Rental_SPA.Sitio {
+    interface HistoriaForm {
+        Titulo: Serenity.StringEditor;
+        Body: Serenity.HtmlContentEditor;
+        Orden: Serenity.IntegerEditor;
+    }
+    class HistoriaForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Rental_SPA.Sitio {
+    interface HistoriaRow {
+        Id?: number;
+        Titulo?: string;
+        Body?: string;
+        Orden?: number;
+    }
+    namespace HistoriaRow {
+        const idProperty = "Id";
+        const nameProperty = "Titulo";
+        const localTextPrefix = "Sitio.Historia";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "*";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            Id = "Id",
+            Titulo = "Titulo",
+            Body = "Body",
+            Orden = "Orden"
+        }
+    }
+}
+declare namespace Rental_SPA.Sitio {
+    namespace HistoriaService {
+        const baseUrl = "Sitio/Historia";
+        function Create(request: Serenity.SaveRequest<HistoriaRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<HistoriaRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<HistoriaRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<HistoriaRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Sitio/Historia/Create",
+            Update = "Sitio/Historia/Update",
+            Delete = "Sitio/Historia/Delete",
+            Retrieve = "Sitio/Historia/Retrieve",
+            List = "Sitio/Historia/List"
+        }
+    }
+}
+declare namespace Rental_SPA.Sitio {
+    class HistoriaDialog extends Serenity.EntityDialog<HistoriaRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: HistoriaForm;
+    }
+}
+declare namespace Rental_SPA.Sitio {
+    class HistoriaGrid extends Serenity.EntityGrid<HistoriaRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof HistoriaDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected onViewProcessData(response: Serenity.ListResponse<HistoriaRow>): Serenity.ListResponse<HistoriaRow>;
+        protected addButtonClick(): void;
+        protected getColumns(): Slick.Column[];
+        protected getSlickOptions(): Slick.GridOptions;
+        protected getViewOptions(): Slick.RemoteViewOptions;
+        protected setOrden(rows: HistoriaRow[]): void;
+    }
+}
+declare namespace Rental_SPA.Sitio {
+}

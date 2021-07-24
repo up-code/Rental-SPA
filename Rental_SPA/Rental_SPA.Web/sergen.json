@@ -26,6 +26,12 @@
           "PermissionKey": "Administration:General"
         },
         {
+          "Tablename": "dbo.Historia",
+          "Identifier": "Historia",
+          "Module": "Sitio",
+          "PermissionKey": "Administration:General"
+        },
+        {
           "Tablename": "dbo.Nosotros",
           "Identifier": "Nosotros",
           "Module": "Sitio",

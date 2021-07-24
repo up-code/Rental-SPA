@@ -5,3 +5,4 @@ using MyPages = Rental_SPA.Sitio.Pages;
 [assembly: NavigationLink(int.MaxValue, "Sitio/Slider", typeof(MyPages.SliderController), icon: "fa-sliders text-blue")]
 [assembly: NavigationLink(int.MaxValue, "Sitio/Nosotros", typeof(MyPages.NosotrosController), icon: "fa-building text-blue")]
 [assembly: NavigationLink(int.MaxValue, "Sitio/Nuestros Clientes", typeof(MyPages.NuestrosClientesController), icon: "fa-group text-blue")]
+[assembly: NavigationLink(int.MaxValue, "Sitio/Tabs", typeof(MyPages.HistoriaController), icon: "fa-book text-blue")]

@@ -133,6 +133,10 @@ namespace MVC
 
         public static class Sitio
         {
+            public static class Historia
+            {
+                public const string HistoriaIndex = "~/Modules/Sitio/Historia/HistoriaIndex.cshtml";
+            }
             public const string Index = "~/Views/Sitio/Index.cshtml";
             public static class Nosotros
             {
