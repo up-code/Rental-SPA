@@ -9,6 +9,8 @@
         Activo?: boolean;
         Garantia?: number;
         IdTipoArriendo?: number;
+        IdTipoArriendoTipo?: string;
+        ProductosDet?: ProductoDetalleRow[];
     }
 
     export namespace ProductosRow {
@@ -29,7 +31,9 @@
             Iva = "Iva",
             Activo = "Activo",
             Garantia = "Garantia",
-            IdTipoArriendo = "IdTipoArriendo"
+            IdTipoArriendo = "IdTipoArriendo",
+            IdTipoArriendoTipo = "IdTipoArriendoTipo",
+            ProductosDet = "ProductosDet"
         }
     }
 }

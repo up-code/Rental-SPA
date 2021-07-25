@@ -43,7 +43,7 @@ namespace Rental_SPA.Gestion.Entities
         }
 
         [DisplayName("Valor")]
-        public Double? Valor
+        public String Valor
         {
             get => fields.Valor[this];
             set => fields.Valor[this] = value;
@@ -65,7 +65,7 @@ namespace Rental_SPA.Gestion.Entities
             public Int32Field IdProducto;
             public Int32Field IdAtributo;
             public Int32Field IdTipoAdicional;
-            public DoubleField Valor;
+            public StringField Valor;
         }
     }
 }

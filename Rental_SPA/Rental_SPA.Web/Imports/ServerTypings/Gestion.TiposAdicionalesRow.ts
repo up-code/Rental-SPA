@@ -12,6 +12,11 @@
         export const idProperty = 'Id';
         export const nameProperty = 'Descripcion';
         export const localTextPrefix = 'Gestion.TiposAdicionales';
+        export const lookupKey = 'Gestion.TiposAdicionales';
+
+        export function getLookup(): Q.Lookup<TiposAdicionalesRow> {
+            return Q.getLookup<TiposAdicionalesRow>('Gestion.TiposAdicionales');
+        }
         export const deletePermission = 'Administration:General';
         export const insertPermission = 'Administration:General';
         export const readPermission = 'Administration:General';
