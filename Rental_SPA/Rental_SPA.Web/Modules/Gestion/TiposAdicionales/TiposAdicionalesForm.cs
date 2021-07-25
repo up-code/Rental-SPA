@@ -12,8 +12,10 @@ namespace Rental_SPA.Gestion.Forms
     [BasedOnRow(typeof(Entities.TiposAdicionalesRow), CheckNames = true)]
     public class TiposAdicionalesForm
     {
-        public String Descripcion { get; set; }
         public String Titulo { get; set; }
+        [TextAreaEditor(Rows = 2)]
+        public String Descripcion { get; set; }
+
         public Int32 Orden { get; set; }
         //public Boolean MostrarPorcentaje { get; set; }
         //public Boolean MostrarImporte { get; set; }

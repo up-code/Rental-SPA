@@ -64,15 +64,15 @@
                     var divRow = $(`<div class="row" idTipoAdicional="${tipoAdicional.Id}"/>`);
                     var div1 = $('<div class="col-md-2 field"/>');
                     var div2 = $('<div class="col-md-4 field"/>');
-                    var div3 = $('<div class="col-md-3 field"/>');
-                    var div4 = $('<div class="col-md-3 field"/>');
+                    var div3 = $('<div class="col-md-2 field"/>');
+                    var div4 = $('<div class="col-md-4 field"/>');
 
                     // div1
-                    $('<label class="caption" />').text(tipoAdicional.Descripcion).appendTo(div1);
+                    $('<label class="caption" />').text(tipoAdicional.Titulo).appendTo(div1);
 
                     // div2                    
                     let inputId2 = this.itemList.uniqueId()[0].id + '_IdAdicional_' + tipoAdicional.Id;
-                    $('<input/>').attr('type', 'text').attr('name', 'IdAdicional').attr('id', inputId2).appendTo(div2);
+                    $('<input/>').attr('type', 'text').attr('name', 'IdAdicional').attr('id', inputId2).attr('style','width:400px;').appendTo(div2);
 
                     // div3                    
                     //let inputId3 = this.itemList.uniqueId()[0].id + '_Porciento_' + tipoAdicional.Id;

@@ -3,6 +3,7 @@
         Tipo: Serenity.StringEditor;
         Codigo: Serenity.StringEditor;
         Detalles: Serenity.CheckLookupEditor;
+        Foto: Serenity.ImageUploadEditor;
     }
 
     export class TipoArriendoForm extends Serenity.PrefixedContext {
@@ -18,11 +19,13 @@
                 var s = Serenity;
                 var w0 = s.StringEditor;
                 var w1 = s.CheckLookupEditor;
+                var w2 = s.ImageUploadEditor;
 
                 Q.initFormType(TipoArriendoForm, [
                     'Tipo', w0,
                     'Codigo', w0,
-                    'Detalles', w1
+                    'Detalles', w1,
+                    'Foto', w2
                 ]);
             }
         }

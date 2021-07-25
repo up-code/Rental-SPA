@@ -1,7 +1,7 @@
 ﻿namespace Rental_SPA.Gestion {
     export interface TiposAdicionalesForm {
-        Descripcion: Serenity.StringEditor;
         Titulo: Serenity.StringEditor;
+        Descripcion: Serenity.TextAreaEditor;
         Orden: Serenity.IntegerEditor;
     }
 
@@ -17,12 +17,13 @@
 
                 var s = Serenity;
                 var w0 = s.StringEditor;
-                var w1 = s.IntegerEditor;
+                var w1 = s.TextAreaEditor;
+                var w2 = s.IntegerEditor;
 
                 Q.initFormType(TiposAdicionalesForm, [
-                    'Descripcion', w0,
                     'Titulo', w0,
-                    'Orden', w1
+                    'Descripcion', w1,
+                    'Orden', w2
                 ]);
             }
         }

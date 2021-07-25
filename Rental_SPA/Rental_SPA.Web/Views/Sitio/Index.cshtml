@@ -22,84 +22,9 @@
                 <h2>@Texts.Sitio.Services.ToString(Localizer)</h2>
             </div>
 
-            <div class="row"
-                 style="justify-content: center; align-content: center">
-                <div class="col-lg-3 col-md-6 icon-box" data-aos="fade-up">
-                    <div class="icon"><i class="icofont-ui-office"></i></div>
-                    <h4 class="title">
-                        <a href="">Arriendo Módulos para Oficina</a>
-                    </h4>
-                    <p class="description">
-
-                    </p>
-                </div>
-                <div class="col-lg-3 col-md-6 icon-box"
-                     data-aos="fade-up"
-                     data-aos-delay="100">
-                    <div class="icon"><i class="icofont-box"></i></div>
-                    <h4 class="title">
-                        <a href="">Arriendo de Módulos para Bodega</a>
-                    </h4>
-                    <p class="description">
-
-                    </p>
-                </div>
-                <div class="col-lg-3 col-md-6 icon-box"
-                     data-aos="fade-up"
-                     data-aos-delay="100">
-                    <div class="icon"><i class="icofont-eco-energy"></i></div>
-                    <h4 class="title">
-                        <a href="">Arriendo de Módulos para Campamento</a>
-                    </h4>
-                    <p class="description">
-
-                    </p>
-                </div>
-                <div class="col-lg-3 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon"><i class="icofont-thunder-light"></i></div>
-                    <h4 class="title">
-                        <a href="">Arriendo de  Generadores</a>
-                    </h4>
-                    <p class="description">
-
-                    </p>
-                </div>
-                <div class="col-lg-3 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon"><i class="icofont-safety-hat"></i></div>
-                    <h4 class="title">
-                        <a href="">Arriendo de Torres de Iluminación</a>
-                    </h4>
-                    <p class="description">
-
-                    </p>
-                </div>
-                <div class="col-lg-3 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon"><i class="icofont-auto-mobile"></i></div>
-                    <h4 class="title">
-                        <a href="">Arriendo de Camionetas 4x4</a>
-                    </h4>
-                    <p class="description">
-
-                    </p>
-                </div>
-                <div class="col-lg-3 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon"><i class="icofont-bus-alt-2"></i></div>
-                    <h4 class="title">
-                        <a href="">Arriendo de Minibuses</a>
-                    </h4>
-                    <p class="description">
-
-                    </p>
-                </div>
-                <div class="col-lg-3 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon"><i class="icofont-car"></i></div>
-                    <h4 class="title">
-                        <a href="">Arriendo de Autos</a>
-                    </h4>
-                    <p class="description">
-
-                    </p>
-                </div>
+            <div class="row" id="tipo_arriendo" style="justify-content: center; align-content: center">
+                
+                
 
                 <button class="btn btn-dark">Arrendar Servicio</button>
 
@@ -117,7 +42,7 @@
                   <h2>@Texts.Sitio.OurClients.ToString(Localizer)</h2>
               </div>
               <div class="row">
-                  <div class="col-lg-12 d-flex" id="ourclients"></div>
+                  <div class="col-lg-12" id="ourclients"></div>
                   
               </div>
           </div>
@@ -207,6 +132,9 @@
             })
             Rental_SPA.Sitio.NuestrosClientesService.List({}, resp => {
                 ReactDOM.render(React.createElement(Rental_SPA.Sitio.NuestrosClientesCard, { Items: resp.Entities }), document.querySelector('#ourclients'));
+            })
+            Rental_SPA.Gestion.TipoArriendoService.List({}, resp => {
+                ReactDOM.render(React.createElement(Rental_SPA.Gestion.TipoArriendoCard, { Items: resp.Entities }), document.querySelector('#tipo_arriendo'));
             })
         });
     </script>

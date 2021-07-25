@@ -36,7 +36,7 @@ namespace Rental_SPA.Sitio.Entities
             set => fields.Nombre[this] = value;
         }
 
-        [DisplayName("Url"), Size(500), NotNull]
+        [DisplayName("Url"), Size(500)]
         public String Url
         {
             get => fields.Url[this];

@@ -16,11 +16,11 @@ namespace Rental_SPA.Gestion.Forms
 
         [Category("Producto")]
 
-        [HalfWidth]
+        [ThreeQuarterWidth]
         public String Nombre { get; set; }
         [QuarterWidth]
         public Boolean Activo { get; set; }
-        [QuarterWidth]
+        [HalfWidth]
         [LookupEditor(typeof(TipoArriendoRow), InplaceAdd = true)]
         public Int32 IdTipoArriendo { get; set; }
 

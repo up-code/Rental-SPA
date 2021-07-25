@@ -16,5 +16,9 @@ namespace Rental_SPA.Gestion.Forms
         public String Codigo { get; set; }
         [CheckLookupEditor(typeof(Entities.TiposAdicionalesRow), ShowSelectAll = true, Delimited = true)]
         public String Detalles { get; set; }
+        [Category("Foto")]
+
+        [LabelWidth(0), DisplayName("")]
+        public String Foto { get; set; }
     }
 }

@@ -24,18 +24,18 @@ namespace Rental_SPA.Gestion.Entities
             set => fields.Id[this] = value;
         }
 
-        [DisplayName("Descripcion"), Size(500), NotNull, QuickSearch, NameProperty]
-        public String Descripcion
-        {
-            get => fields.Descripcion[this];
-            set => fields.Descripcion[this] = value;
-        }
-
-        [DisplayName("Titulo"), Size(200), NotNull]
+        [DisplayName("Titulo"), Size(200), NotNull, QuickSearch, NameProperty]
         public String Titulo
         {
             get => fields.Titulo[this];
             set => fields.Titulo[this] = value;
+        }
+
+        [DisplayName("Descripcion"), Size(500), NotNull]
+        public String Descripcion
+        {
+            get => fields.Descripcion[this];
+            set => fields.Descripcion[this] = value;
         }
 
         [DisplayName("Orden"), LookupInclude, NotNull]
@@ -45,14 +45,14 @@ namespace Rental_SPA.Gestion.Entities
             set => fields.Orden[this] = value;
         }
 
-        [DisplayName("Mostrar Porcentaje"), NotNull]
+        [DisplayName("Mostrar Porcentaje")]
         public Boolean? MostrarPorcentaje
         {
             get => fields.MostrarPorcentaje[this];
             set => fields.MostrarPorcentaje[this] = value;
         }
 
-        [DisplayName("Mostrar Importe"), NotNull]
+        [DisplayName("Mostrar Importe")]
         public Boolean? MostrarImporte
         {
             get => fields.MostrarImporte[this];

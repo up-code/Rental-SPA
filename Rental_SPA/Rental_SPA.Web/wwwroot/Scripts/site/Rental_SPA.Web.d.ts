@@ -678,6 +678,7 @@ declare namespace Rental_SPA.Gestion {
         IdAtributo?: number;
         IdTipoAdicional?: number;
         Valor?: string;
+        IdTipoAdicionalTitulo?: string;
     }
     namespace ProductoDetalleRow {
         const idProperty = "Id";
@@ -691,7 +692,8 @@ declare namespace Rental_SPA.Gestion {
             IdProducto = "IdProducto",
             IdAtributo = "IdAtributo",
             IdTipoAdicional = "IdTipoAdicional",
-            Valor = "Valor"
+            Valor = "Valor",
+            IdTipoAdicionalTitulo = "IdTipoAdicionalTitulo"
         }
     }
 }
@@ -793,6 +795,7 @@ declare namespace Rental_SPA.Gestion {
         Tipo: Serenity.StringEditor;
         Codigo: Serenity.StringEditor;
         Detalles: Serenity.CheckLookupEditor;
+        Foto: Serenity.ImageUploadEditor;
     }
     class TipoArriendoForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -806,6 +809,7 @@ declare namespace Rental_SPA.Gestion {
         Tipo?: string;
         Codigo?: string;
         Detalles?: string;
+        Foto?: string;
     }
     namespace TipoArriendoRow {
         const idProperty = "Id";
@@ -815,13 +819,14 @@ declare namespace Rental_SPA.Gestion {
         function getLookup(): Q.Lookup<TipoArriendoRow>;
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";
-        const readPermission = "Administration:General";
+        const readPermission = "*";
         const updatePermission = "Administration:General";
         const enum Fields {
             Id = "Id",
             Tipo = "Tipo",
             Codigo = "Codigo",
-            Detalles = "Detalles"
+            Detalles = "Detalles",
+            Foto = "Foto"
         }
     }
 }
@@ -846,8 +851,8 @@ declare namespace Rental_SPA.Gestion {
 }
 declare namespace Rental_SPA.Gestion {
     interface TiposAdicionalesForm {
-        Descripcion: Serenity.StringEditor;
         Titulo: Serenity.StringEditor;
+        Descripcion: Serenity.TextAreaEditor;
         Orden: Serenity.IntegerEditor;
     }
     class TiposAdicionalesForm extends Serenity.PrefixedContext {
@@ -867,7 +872,7 @@ declare namespace Rental_SPA.Gestion {
     }
     namespace TiposAdicionalesRow {
         const idProperty = "Id";
-        const nameProperty = "Descripcion";
+        const nameProperty = "Titulo";
         const localTextPrefix = "Gestion.TiposAdicionales";
         const lookupKey = "Gestion.TiposAdicionales";
         function getLookup(): Q.Lookup<TiposAdicionalesRow>;
@@ -1962,6 +1967,7 @@ declare namespace Rental_SPA.Sitio {
     }
     export class NuestrosClientesCard extends React.Component<OurClientsParameters> {
         render(): React.ReactNode;
+        componentDidMount(): void;
     }
     export {};
 }
@@ -2022,4 +2028,13 @@ declare namespace Rental_SPA.Sitio {
         protected getService(): string;
         constructor(container: JQuery);
     }
+}
+declare namespace Rental_SPA.Gestion {
+    interface arriendoParameters {
+        Items: TipoArriendoRow[];
+    }
+    export class TipoArriendoCard extends React.Component<arriendoParameters> {
+        render(): React.ReactNode;
+    }
+    export {};
 }

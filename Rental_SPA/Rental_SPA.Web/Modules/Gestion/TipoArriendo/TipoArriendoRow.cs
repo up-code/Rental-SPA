@@ -11,7 +11,7 @@ namespace Rental_SPA.Gestion.Entities
 {
     [ConnectionKey("Default"), Module("Gestion"), TableName("[dbo].[Tipo_Arriendo]")]
     [DisplayName("Tipo Arriendo"), InstanceName("Tipo Arriendo")]
-    [ReadPermission("Administration:General")]
+    [ReadPermission("*")]
     [ModifyPermission("Administration:General")]
 
     [LookupScript]
@@ -44,6 +44,14 @@ namespace Rental_SPA.Gestion.Entities
             get => fields.Detalles[this];
             set => fields.Detalles[this] = value;
         }
+        [DisplayName("Foto"), NotNull]
+        [ImageUploadEditor]
+        public String Foto
+        {
+            get => fields.Foto[this];
+            set => fields.Foto[this] = value;
+        }
+
 
         public TipoArriendoRow()
             : base()
@@ -61,6 +69,7 @@ namespace Rental_SPA.Gestion.Entities
             public StringField Tipo;
             public StringField Codigo;
             public StringField Detalles;
+            public StringField Foto;
         }
     }
 }

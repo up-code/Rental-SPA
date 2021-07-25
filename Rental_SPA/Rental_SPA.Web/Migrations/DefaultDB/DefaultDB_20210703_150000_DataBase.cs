@@ -35,7 +35,8 @@ namespace Rental_SPA.Migrations.DefaultDB
             //Tabla para tipos de arriendos
             this.CreateTableWithId32("Tipo_Arriendo", "Id", a => a
             .WithColumn("Tipo").AsString(50).NotNullable()
-            .WithColumn("Codigo").AsString(2).NotNullable());
+            .WithColumn("Codigo").AsString(2).NotNullable()
+            .WithColumn("Foto").AsString(400).NotNullable());
 
             //Tabla para los Productos
             this.CreateTableWithId32("Productos", "Id", s => s
@@ -101,7 +102,7 @@ namespace Rental_SPA.Migrations.DefaultDB
             this.CreateTableWithId32("Nuestros_Clientes", "Id", c => c
             .WithColumn("Logo").AsString(500).NotNullable()
             .WithColumn("Nombre").AsString(300).NotNullable()
-            .WithColumn("Url").AsString(500).NotNullable());
+            .WithColumn("Url").AsString(500).Nullable());
 
 
            

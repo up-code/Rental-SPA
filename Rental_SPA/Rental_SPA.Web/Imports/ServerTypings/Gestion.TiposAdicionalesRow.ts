@@ -10,7 +10,7 @@
 
     export namespace TiposAdicionalesRow {
         export const idProperty = 'Id';
-        export const nameProperty = 'Descripcion';
+        export const nameProperty = 'Titulo';
         export const localTextPrefix = 'Gestion.TiposAdicionales';
         export const lookupKey = 'Gestion.TiposAdicionales';
 

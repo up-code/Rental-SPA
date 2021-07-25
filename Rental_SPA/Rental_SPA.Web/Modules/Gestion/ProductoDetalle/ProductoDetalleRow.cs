@@ -36,10 +36,18 @@ namespace Rental_SPA.Gestion.Entities
         }
 
         [DisplayName("Id Tipo Adicional")]
+        [ForeignKey("[dbo].[Tipos_Adicionales]", "Id"), LeftJoin("T5")]
         public Int32? IdTipoAdicional
         {
             get => fields.IdTipoAdicional[this];
             set => fields.IdTipoAdicional[this] = value;
+        }
+
+        [DisplayName("Tipo Adicional"), Expression("T5.[Titulo]"), MinSelectLevel(SelectLevel.Always)]
+        public String IdTipoAdicionalTitulo
+        {
+            get => fields.IdTipoAdicionalTitulo[this];
+            set => fields.IdTipoAdicionalTitulo[this] = value;
         }
 
         [DisplayName("Valor")]
@@ -66,6 +74,7 @@ namespace Rental_SPA.Gestion.Entities
             public Int32Field IdAtributo;
             public Int32Field IdTipoAdicional;
             public StringField Valor;
+            public StringField IdTipoAdicionalTitulo;
         }
     }
 }

@@ -5,6 +5,7 @@
         IdAtributo?: number;
         IdTipoAdicional?: number;
         Valor?: string;
+        IdTipoAdicionalTitulo?: string;
     }
 
     export namespace ProductoDetalleRow {
@@ -20,7 +21,8 @@
             IdProducto = "IdProducto",
             IdAtributo = "IdAtributo",
             IdTipoAdicional = "IdTipoAdicional",
-            Valor = "Valor"
+            Valor = "Valor",
+            IdTipoAdicionalTitulo = "IdTipoAdicionalTitulo"
         }
     }
 }

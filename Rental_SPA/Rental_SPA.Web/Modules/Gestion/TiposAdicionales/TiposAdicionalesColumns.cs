@@ -15,8 +15,9 @@ namespace Rental_SPA.Gestion.Columns
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 Id { get; set; }
         [EditLink]
-        public String Descripcion { get; set; }
         public String Titulo { get; set; }
+        public String Descripcion { get; set; }
+
         public Int32 Orden { get; set; }
         //public Boolean MostrarPorcentaje { get; set; }
         //public Boolean MostrarImporte { get; set; }

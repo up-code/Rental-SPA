@@ -89,7 +89,7 @@ namespace Rental_SPA.Gestion.Entities
         }
 
         [DisplayName("Detalles")]
-        [MasterDetailRelation(foreignKey: nameof(ProductoDetalleRow.Fields.IdProducto)), MinSelectLevel(SelectLevel.Details)]
+        [MasterDetailRelation(foreignKey: nameof(ProductoDetalleRow.Fields.IdProducto)), MinSelectLevel(SelectLevel.Always)]
         public List<ProductoDetalleRow> ProductosDet { get { return Fields.ProductosDet[this]; } set { Fields.ProductosDet[this] = value; } }
 
         public ProductosRow()
