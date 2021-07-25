@@ -8,9 +8,7 @@
         render(): React.ReactNode {
             return (<>
                 <div className="hero-container">
-                    <div id="heroCarousel"
-                        className="carousel slide carousel-fade"
-                        data-ride="carousel">
+                    <div id="heroCarousel" className="carousel slide carousel-fade" data-ride="carousel">
                         <ol className="carousel-indicators" id="hero-carousel-indicators"></ol>
 
                         <div className="carousel-inner" role="listbox">
@@ -53,7 +51,8 @@
        
         componentDidMount() {
             $("#heroCarousel").carousel({
-                interval: 4000
+                interval: 3000,
+                autoplay: true
             });
 
         }
