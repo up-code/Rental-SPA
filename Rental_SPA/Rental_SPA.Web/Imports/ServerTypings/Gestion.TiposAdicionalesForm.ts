@@ -3,8 +3,6 @@
         Descripcion: Serenity.StringEditor;
         Titulo: Serenity.StringEditor;
         Orden: Serenity.IntegerEditor;
-        MostrarPorcentaje: Serenity.BooleanEditor;
-        MostrarImporte: Serenity.BooleanEditor;
     }
 
     export class TiposAdicionalesForm extends Serenity.PrefixedContext {
@@ -20,14 +18,11 @@
                 var s = Serenity;
                 var w0 = s.StringEditor;
                 var w1 = s.IntegerEditor;
-                var w2 = s.BooleanEditor;
 
                 Q.initFormType(TiposAdicionalesForm, [
                     'Descripcion', w0,
                     'Titulo', w0,
-                    'Orden', w1,
-                    'MostrarPorcentaje', w2,
-                    'MostrarImporte', w2
+                    'Orden', w1
                 ]);
             }
         }

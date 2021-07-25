@@ -2,7 +2,9 @@
 using Serenity.ComponentModel;
 using Serenity.Data;
 using Serenity.Data.Mapping;
+
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 
@@ -29,6 +31,7 @@ namespace Rental_SPA.Gestion.Entities
         }
 
         [DisplayName("Foto")]
+        [ImageUploadEditor]
         public String Foto
         {
             get => fields.Foto[this];
@@ -70,12 +73,24 @@ namespace Rental_SPA.Gestion.Entities
             set => fields.Garantia[this] = value;
         }
 
-        [DisplayName("Id Tipo Arriendo"), Column("IdTipo_Arriendo"), NotNull]
+        [DisplayName("Tipo"), Column("IdTipo_Arriendo"), NotNull]
+        [ForeignKey("[dbo].[Tipo_Arriendo]", "Id"), LeftJoin("T5")]
         public Int32? IdTipoArriendo
         {
             get => fields.IdTipoArriendo[this];
             set => fields.IdTipoArriendo[this] = value;
         }
+
+        [DisplayName("Tipo"), Expression("T5.[Tipo]")]
+        public String IdTipoArriendoTipo
+        {
+            get => fields.IdTipoArriendoTipo[this];
+            set => fields.IdTipoArriendoTipo[this] = value;
+        }
+
+        [DisplayName("Detalles")]
+        [MasterDetailRelation(foreignKey: nameof(ProductoDetalleRow.Fields.IdProducto)), MinSelectLevel(SelectLevel.Details)]
+        public List<ProductoDetalleRow> ProductosDet { get { return Fields.ProductosDet[this]; } set { Fields.ProductosDet[this] = value; } }
 
         public ProductosRow()
             : base()
@@ -98,6 +113,9 @@ namespace Rental_SPA.Gestion.Entities
             public BooleanField Activo;
             public DoubleField Garantia;
             public Int32Field IdTipoArriendo;
+            public StringField IdTipoArriendoTipo;
+
+            public RowListField<ProductoDetalleRow> ProductosDet;
         }
     }
 }

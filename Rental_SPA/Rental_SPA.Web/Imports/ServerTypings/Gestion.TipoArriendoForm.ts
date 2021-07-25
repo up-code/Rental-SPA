@@ -2,6 +2,7 @@
     export interface TipoArriendoForm {
         Tipo: Serenity.StringEditor;
         Codigo: Serenity.StringEditor;
+        Detalles: Serenity.CheckLookupEditor;
     }
 
     export class TipoArriendoForm extends Serenity.PrefixedContext {
@@ -16,10 +17,12 @@
 
                 var s = Serenity;
                 var w0 = s.StringEditor;
+                var w1 = s.CheckLookupEditor;
 
                 Q.initFormType(TipoArriendoForm, [
                     'Tipo', w0,
-                    'Codigo', w0
+                    'Codigo', w0,
+                    'Detalles', w1
                 ]);
             }
         }

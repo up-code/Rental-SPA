@@ -47,7 +47,6 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Modules\Gestion\" />
     <Folder Include="wwwroot\lib\" />
   </ItemGroup>
   <Import Project="$(SolutionDir)Serenity\build\submodule.targets" Condition="Exists('$(SolutionDir)Serenity\build\submodule.targets')" />

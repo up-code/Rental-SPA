@@ -2,6 +2,7 @@
 using Serenity.ComponentModel;
 using Serenity.Data;
 using Serenity.Data.Mapping;
+
 using System;
 using System.ComponentModel;
 using System.IO;
@@ -12,6 +13,8 @@ namespace Rental_SPA.Gestion.Entities
     [DisplayName("Tipos Adicionales"), InstanceName("Tipos Adicionales")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
+
+    [LookupScript]
     public sealed class TiposAdicionalesRow : Row<TiposAdicionalesRow.RowFields>, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity, IdProperty]
@@ -35,7 +38,7 @@ namespace Rental_SPA.Gestion.Entities
             set => fields.Titulo[this] = value;
         }
 
-        [DisplayName("Orden")]
+        [DisplayName("Orden"), LookupInclude, NotNull]
         public Int32? Orden
         {
             get => fields.Orden[this];

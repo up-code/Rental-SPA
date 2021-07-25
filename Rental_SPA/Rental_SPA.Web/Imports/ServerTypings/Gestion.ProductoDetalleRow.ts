@@ -4,7 +4,7 @@
         IdProducto?: number;
         IdAtributo?: number;
         IdTipoAdicional?: number;
-        Valor?: number;
+        Valor?: string;
     }
 
     export namespace ProductoDetalleRow {

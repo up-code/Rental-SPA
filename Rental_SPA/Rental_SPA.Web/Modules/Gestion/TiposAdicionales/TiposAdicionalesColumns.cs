@@ -18,7 +18,7 @@ namespace Rental_SPA.Gestion.Columns
         public String Descripcion { get; set; }
         public String Titulo { get; set; }
         public Int32 Orden { get; set; }
-        public Boolean MostrarPorcentaje { get; set; }
-        public Boolean MostrarImporte { get; set; }
+        //public Boolean MostrarPorcentaje { get; set; }
+        //public Boolean MostrarImporte { get; set; }
     }
 }

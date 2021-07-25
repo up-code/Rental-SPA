@@ -1,13 +1,14 @@
 ﻿namespace Rental_SPA.Gestion {
     export interface ProductosForm {
         Nombre: Serenity.StringEditor;
-        Foto: Serenity.StringEditor;
+        Activo: Serenity.BooleanEditor;
+        IdTipoArriendo: Serenity.LookupEditor;
+        ProductosDet: ProductosDetEditorCard;
         Cantidad: Serenity.IntegerEditor;
         Precio: Serenity.DecimalEditor;
         Iva: Serenity.DecimalEditor;
-        Activo: Serenity.BooleanEditor;
         Garantia: Serenity.DecimalEditor;
-        IdTipoArriendo: Serenity.IntegerEditor;
+        Foto: Serenity.ImageUploadEditor;
     }
 
     export class ProductosForm extends Serenity.PrefixedContext {
@@ -22,19 +23,23 @@
 
                 var s = Serenity;
                 var w0 = s.StringEditor;
-                var w1 = s.IntegerEditor;
-                var w2 = s.DecimalEditor;
-                var w3 = s.BooleanEditor;
+                var w1 = s.BooleanEditor;
+                var w2 = s.LookupEditor;
+                var w3 = ProductosDetEditorCard;
+                var w4 = s.IntegerEditor;
+                var w5 = s.DecimalEditor;
+                var w6 = s.ImageUploadEditor;
 
                 Q.initFormType(ProductosForm, [
                     'Nombre', w0,
-                    'Foto', w0,
-                    'Cantidad', w1,
-                    'Precio', w2,
-                    'Iva', w2,
-                    'Activo', w3,
-                    'Garantia', w2,
-                    'IdTipoArriendo', w1
+                    'Activo', w1,
+                    'IdTipoArriendo', w2,
+                    'ProductosDet', w3,
+                    'Cantidad', w4,
+                    'Precio', w5,
+                    'Iva', w5,
+                    'Garantia', w5,
+                    'Foto', w6
                 ]);
             }
         }

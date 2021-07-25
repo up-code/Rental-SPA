@@ -677,7 +677,7 @@ declare namespace Rental_SPA.Gestion {
         IdProducto?: number;
         IdAtributo?: number;
         IdTipoAdicional?: number;
-        Valor?: number;
+        Valor?: string;
     }
     namespace ProductoDetalleRow {
         const idProperty = "Id";
@@ -717,13 +717,14 @@ declare namespace Rental_SPA.Gestion {
 declare namespace Rental_SPA.Gestion {
     interface ProductosForm {
         Nombre: Serenity.StringEditor;
-        Foto: Serenity.StringEditor;
+        Activo: Serenity.BooleanEditor;
+        IdTipoArriendo: Serenity.LookupEditor;
+        ProductosDet: ProductosDetEditorCard;
         Cantidad: Serenity.IntegerEditor;
         Precio: Serenity.DecimalEditor;
         Iva: Serenity.DecimalEditor;
-        Activo: Serenity.BooleanEditor;
         Garantia: Serenity.DecimalEditor;
-        IdTipoArriendo: Serenity.IntegerEditor;
+        Foto: Serenity.ImageUploadEditor;
     }
     class ProductosForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -742,6 +743,8 @@ declare namespace Rental_SPA.Gestion {
         Activo?: boolean;
         Garantia?: number;
         IdTipoArriendo?: number;
+        IdTipoArriendoTipo?: string;
+        ProductosDet?: ProductoDetalleRow[];
     }
     namespace ProductosRow {
         const idProperty = "Id";
@@ -760,7 +763,9 @@ declare namespace Rental_SPA.Gestion {
             Iva = "Iva",
             Activo = "Activo",
             Garantia = "Garantia",
-            IdTipoArriendo = "IdTipoArriendo"
+            IdTipoArriendo = "IdTipoArriendo",
+            IdTipoArriendoTipo = "IdTipoArriendoTipo",
+            ProductosDet = "ProductosDet"
         }
     }
 }
@@ -787,6 +792,7 @@ declare namespace Rental_SPA.Gestion {
     interface TipoArriendoForm {
         Tipo: Serenity.StringEditor;
         Codigo: Serenity.StringEditor;
+        Detalles: Serenity.CheckLookupEditor;
     }
     class TipoArriendoForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -799,11 +805,14 @@ declare namespace Rental_SPA.Gestion {
         Id?: number;
         Tipo?: string;
         Codigo?: string;
+        Detalles?: string;
     }
     namespace TipoArriendoRow {
         const idProperty = "Id";
         const nameProperty = "Tipo";
         const localTextPrefix = "Gestion.TipoArriendo";
+        const lookupKey = "Gestion.TipoArriendo";
+        function getLookup(): Q.Lookup<TipoArriendoRow>;
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";
         const readPermission = "Administration:General";
@@ -811,7 +820,8 @@ declare namespace Rental_SPA.Gestion {
         const enum Fields {
             Id = "Id",
             Tipo = "Tipo",
-            Codigo = "Codigo"
+            Codigo = "Codigo",
+            Detalles = "Detalles"
         }
     }
 }
@@ -839,8 +849,6 @@ declare namespace Rental_SPA.Gestion {
         Descripcion: Serenity.StringEditor;
         Titulo: Serenity.StringEditor;
         Orden: Serenity.IntegerEditor;
-        MostrarPorcentaje: Serenity.BooleanEditor;
-        MostrarImporte: Serenity.BooleanEditor;
     }
     class TiposAdicionalesForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -861,6 +869,8 @@ declare namespace Rental_SPA.Gestion {
         const idProperty = "Id";
         const nameProperty = "Descripcion";
         const localTextPrefix = "Gestion.TiposAdicionales";
+        const lookupKey = "Gestion.TiposAdicionales";
+        function getLookup(): Q.Lookup<TiposAdicionalesRow>;
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";
         const readPermission = "Administration:General";
@@ -1002,6 +1012,60 @@ declare namespace Rental_SPA {
         Permissions?: {
             [key: string]: boolean;
         };
+    }
+}
+declare namespace Rental_SPA.Sitio {
+}
+declare namespace Rental_SPA.Sitio {
+    interface HistoriaForm {
+        Titulo: Serenity.StringEditor;
+        Body: Serenity.HtmlContentEditor;
+        Orden: Serenity.IntegerEditor;
+    }
+    class HistoriaForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Rental_SPA.Sitio {
+    interface HistoriaRow {
+        Id?: number;
+        Titulo?: string;
+        Body?: string;
+        Orden?: number;
+    }
+    namespace HistoriaRow {
+        const idProperty = "Id";
+        const nameProperty = "Titulo";
+        const localTextPrefix = "Sitio.Historia";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "*";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            Id = "Id",
+            Titulo = "Titulo",
+            Body = "Body",
+            Orden = "Orden"
+        }
+    }
+}
+declare namespace Rental_SPA.Sitio {
+    namespace HistoriaService {
+        const baseUrl = "Sitio/Historia";
+        function Create(request: Serenity.SaveRequest<HistoriaRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<HistoriaRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<HistoriaRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<HistoriaRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Sitio/Historia/Create",
+            Update = "Sitio/Historia/Update",
+            Delete = "Sitio/Historia/Delete",
+            Retrieve = "Sitio/Historia/Retrieve",
+            List = "Sitio/Historia/List"
+        }
     }
 }
 declare namespace Rental_SPA.Sitio {
@@ -1701,6 +1765,26 @@ declare namespace Rental_SPA.Gestion {
     }
 }
 declare namespace Rental_SPA.Gestion {
+    class ProductosDetEditorCard extends Serenity.TemplatedWidget<any> implements Serenity.IGetEditValue, Serenity.ISetEditValue {
+        private isDirty;
+        private items;
+        private itemList;
+        private rowItems;
+        private porcientoSubTotalInput;
+        private importeSubTotalInput;
+        constructor(div: JQuery);
+        private _IdTipoArriendo;
+        set IdTipoArriendo(value: number);
+        protected getTemplate(): string;
+        protected updateContent(): void;
+        get value(): ProductoDetalleRow[];
+        set value(value: ProductoDetalleRow[]);
+        getEditValue(prop: Serenity.PropertyItem, target: any): void;
+        setEditValue(source: any, prop: Serenity.PropertyItem): void;
+        onChange: () => void;
+    }
+}
+declare namespace Rental_SPA.Gestion {
     class ProductosDialog extends Serenity.EntityDialog<ProductosRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -1711,6 +1795,7 @@ declare namespace Rental_SPA.Gestion {
         protected getInsertPermission(): string;
         protected getUpdatePermission(): string;
         protected form: ProductosForm;
+        constructor(opt?: any);
     }
 }
 declare namespace Rental_SPA.Gestion {
@@ -1806,6 +1891,36 @@ declare namespace Rental_SPA.Membership {
         protected getFormKey(): string;
         private form;
         constructor(container: JQuery);
+    }
+}
+declare namespace Rental_SPA.Sitio {
+    class HistoriaDialog extends Serenity.EntityDialog<HistoriaRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: HistoriaForm;
+    }
+}
+declare namespace Rental_SPA.Sitio {
+    class HistoriaGrid extends Serenity.EntityGrid<HistoriaRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof HistoriaDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected onViewProcessData(response: Serenity.ListResponse<HistoriaRow>): Serenity.ListResponse<HistoriaRow>;
+        protected addButtonClick(): void;
+        protected getColumns(): Slick.Column[];
+        protected getSlickOptions(): Slick.GridOptions;
+        protected getViewOptions(): Slick.RemoteViewOptions;
+        protected setOrden(rows: HistoriaRow[]): void;
     }
 }
 declare namespace Rental_SPA.Sitio {
@@ -1907,88 +2022,4 @@ declare namespace Rental_SPA.Sitio {
         protected getService(): string;
         constructor(container: JQuery);
     }
-}
-declare namespace Rental_SPA.Sitio {
-    interface HistoriaForm {
-        Titulo: Serenity.StringEditor;
-        Body: Serenity.HtmlContentEditor;
-        Orden: Serenity.IntegerEditor;
-    }
-    class HistoriaForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace Rental_SPA.Sitio {
-    interface HistoriaRow {
-        Id?: number;
-        Titulo?: string;
-        Body?: string;
-        Orden?: number;
-    }
-    namespace HistoriaRow {
-        const idProperty = "Id";
-        const nameProperty = "Titulo";
-        const localTextPrefix = "Sitio.Historia";
-        const deletePermission = "Administration:General";
-        const insertPermission = "Administration:General";
-        const readPermission = "*";
-        const updatePermission = "Administration:General";
-        const enum Fields {
-            Id = "Id",
-            Titulo = "Titulo",
-            Body = "Body",
-            Orden = "Orden"
-        }
-    }
-}
-declare namespace Rental_SPA.Sitio {
-    namespace HistoriaService {
-        const baseUrl = "Sitio/Historia";
-        function Create(request: Serenity.SaveRequest<HistoriaRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<HistoriaRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<HistoriaRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<HistoriaRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "Sitio/Historia/Create",
-            Update = "Sitio/Historia/Update",
-            Delete = "Sitio/Historia/Delete",
-            Retrieve = "Sitio/Historia/Retrieve",
-            List = "Sitio/Historia/List"
-        }
-    }
-}
-declare namespace Rental_SPA.Sitio {
-    class HistoriaDialog extends Serenity.EntityDialog<HistoriaRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected getDeletePermission(): string;
-        protected getInsertPermission(): string;
-        protected getUpdatePermission(): string;
-        protected form: HistoriaForm;
-    }
-}
-declare namespace Rental_SPA.Sitio {
-    class HistoriaGrid extends Serenity.EntityGrid<HistoriaRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof HistoriaDialog;
-        protected getIdProperty(): string;
-        protected getInsertPermission(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-        protected onViewProcessData(response: Serenity.ListResponse<HistoriaRow>): Serenity.ListResponse<HistoriaRow>;
-        protected addButtonClick(): void;
-        protected getColumns(): Slick.Column[];
-        protected getSlickOptions(): Slick.GridOptions;
-        protected getViewOptions(): Slick.RemoteViewOptions;
-        protected setOrden(rows: HistoriaRow[]): void;
-    }
-}
-declare namespace Rental_SPA.Sitio {
 }
