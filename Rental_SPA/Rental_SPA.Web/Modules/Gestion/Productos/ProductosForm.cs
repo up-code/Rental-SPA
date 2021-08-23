@@ -24,6 +24,10 @@ namespace Rental_SPA.Gestion.Forms
         [LookupEditor(typeof(TipoArriendoRow), InplaceAdd = true)]
         public Int32 IdTipoArriendo { get; set; }
 
+
+        [HtmlContentEditor]
+        public String Descripcion { get; set; }
+
         [Category("Datos Especificos")]
         [ProductosDetEditorCard, DisplayName(""), LabelWidth(0)]
         public List<ProductoDetalleRow> ProductosDet { get; set; }

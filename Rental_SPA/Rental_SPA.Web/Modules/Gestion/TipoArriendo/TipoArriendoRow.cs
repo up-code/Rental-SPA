@@ -13,7 +13,6 @@ namespace Rental_SPA.Gestion.Entities
     [DisplayName("Tipo Arriendo"), InstanceName("Tipo Arriendo")]
     [ReadPermission("*")]
     [ModifyPermission("Administration:General")]
-
     [LookupScript]
     public sealed class TipoArriendoRow : Row<TipoArriendoRow.RowFields>, IIdRow, INameRow
     {

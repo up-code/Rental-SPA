@@ -47,7 +47,8 @@ namespace Rental_SPA.Migrations.DefaultDB
             .WithColumn("Iva").AsDouble().NotNullable()
             .WithColumn("Activo").AsBoolean().Nullable()
             .WithColumn("Garantia").AsDouble().Nullable()
-            .WithColumn("IdTipo_Arriendo").AsInt32().NotNullable());
+            .WithColumn("IdTipo_Arriendo").AsInt32().NotNullable()
+            .WithColumn("Descripcion").AsString(int.MaxValue).Nullable());
 
             //Tabla ProductoDet
             this.CreateTableWithId32("ProductoDet", "Id", d => d

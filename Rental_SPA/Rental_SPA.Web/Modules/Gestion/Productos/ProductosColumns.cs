@@ -21,6 +21,8 @@ namespace Rental_SPA.Gestion.Columns
 
         public String IdTipoArriendoTipo { get; set; }
 
+        public String Descripcion { get; set; }
+
         //public String Foto { get; set; }
 
         [DisplayFormat("0"), AlignRight, HeaderCssClass("align-right")]

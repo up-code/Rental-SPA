@@ -1,0 +1,20 @@
+﻿@model int? 
+@{
+    ViewData["Title"] = "Detalle del Producto";
+    Layout = MVC.Views.Shared._LayoutSitio;
+}
+
+<div id="detail"></div>
+
+
+@section scripts{ 
+    <script type="text/javascript">
+    $().ready(function () {
+        Rental_SPA.Gestion.ProductosService.Retrieve({
+            EntityId: @Model
+        }, resp => {
+            ReactDOM.render(React.createElement(Rental_SPA.Gestion.ProductoDetalle, { Producto: resp.Entity }), document.querySelector('#detail'));
+        })
+    })
+    </script>
+}

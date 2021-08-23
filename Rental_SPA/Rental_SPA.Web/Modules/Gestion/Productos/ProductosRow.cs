@@ -2,7 +2,6 @@
 using Serenity.ComponentModel;
 using Serenity.Data;
 using Serenity.Data.Mapping;
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,8 +11,8 @@ namespace Rental_SPA.Gestion.Entities
 {
     [ConnectionKey("Default"), Module("Gestion"), TableName("[dbo].[Productos]")]
     [DisplayName("Productos"), InstanceName("Productos")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission("*")]
+    [ModifyPermission(" Administration:General")]
     public sealed class ProductosRow : Row<ProductosRow.RowFields>, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity, IdProperty]
@@ -88,6 +87,13 @@ namespace Rental_SPA.Gestion.Entities
             set => fields.IdTipoArriendoTipo[this] = value;
         }
 
+        [DisplayName("Descripción"), Column("Descripcion")]
+        public String Descripcion
+        {
+            get => fields.Descripcion[this];
+            set => fields.Descripcion[this] = value;
+        }
+
         [DisplayName("Detalles")]
         [MasterDetailRelation(foreignKey: nameof(ProductoDetalleRow.Fields.IdProducto)), MinSelectLevel(SelectLevel.Always)]
         public List<ProductoDetalleRow> ProductosDet { get { return Fields.ProductosDet[this]; } set { Fields.ProductosDet[this] = value; } }
@@ -114,6 +120,7 @@ namespace Rental_SPA.Gestion.Entities
             public DoubleField Garantia;
             public Int32Field IdTipoArriendo;
             public StringField IdTipoArriendoTipo;
+            public StringField Descripcion;
 
             public RowListField<ProductoDetalleRow> ProductosDet;
         }

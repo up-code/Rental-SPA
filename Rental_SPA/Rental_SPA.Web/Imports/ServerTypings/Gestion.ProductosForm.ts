@@ -3,6 +3,7 @@
         Nombre: Serenity.StringEditor;
         Activo: Serenity.BooleanEditor;
         IdTipoArriendo: Serenity.LookupEditor;
+        Descripcion: Serenity.HtmlContentEditor;
         ProductosDet: ProductosDetEditorCard;
         Cantidad: Serenity.IntegerEditor;
         Precio: Serenity.DecimalEditor;
@@ -25,21 +26,23 @@
                 var w0 = s.StringEditor;
                 var w1 = s.BooleanEditor;
                 var w2 = s.LookupEditor;
-                var w3 = ProductosDetEditorCard;
-                var w4 = s.IntegerEditor;
-                var w5 = s.DecimalEditor;
-                var w6 = s.ImageUploadEditor;
+                var w3 = s.HtmlContentEditor;
+                var w4 = ProductosDetEditorCard;
+                var w5 = s.IntegerEditor;
+                var w6 = s.DecimalEditor;
+                var w7 = s.ImageUploadEditor;
 
                 Q.initFormType(ProductosForm, [
                     'Nombre', w0,
                     'Activo', w1,
                     'IdTipoArriendo', w2,
-                    'ProductosDet', w3,
-                    'Cantidad', w4,
-                    'Precio', w5,
-                    'Iva', w5,
-                    'Garantia', w5,
-                    'Foto', w6
+                    'Descripcion', w3,
+                    'ProductosDet', w4,
+                    'Cantidad', w5,
+                    'Precio', w6,
+                    'Iva', w6,
+                    'Garantia', w6,
+                    'Foto', w7
                 ]);
             }
         }

@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Rental_SPA.Web.Modules.Sitio.Home
 {
-    [Route("~/{action=index}/{id?}")]
+    [Route("~/{action=index}")]
     [ScriptSkip]
     public class SitioController : Controller
     {
@@ -50,6 +50,19 @@ namespace Rental_SPA.Web.Modules.Sitio.Home
             var result = "ok";
 
             return Json(new { res = result });
+        }
+
+        [HttpGet("{Id}")]
+        [HttpPost("{Id}")]
+        public IActionResult ProductList(int? Id)
+        {
+            return View(MVC.Views.Sitio.ProductList, Id);
+        }
+        [HttpGet("{Id}")]
+        [HttpPost("{Id}")]
+        public IActionResult ProductDetail(int? Id)
+        {
+            return View(MVC.Views.Sitio.ProductDetail, Id);
         }
     }
 }

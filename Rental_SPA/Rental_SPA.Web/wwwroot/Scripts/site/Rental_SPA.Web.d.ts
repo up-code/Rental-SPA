@@ -497,7 +497,7 @@ declare namespace Rental_SPA.Gestion {
         const localTextPrefix = "Gestion.Arriendos";
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";
-        const readPermission = "Administration:General";
+        const readPermission = "*";
         const updatePermission = "Administration:General";
         const enum Fields {
             Id = "Id",
@@ -562,7 +562,7 @@ declare namespace Rental_SPA.Gestion {
         const localTextPrefix = "Gestion.Atributos";
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";
-        const readPermission = "Administration:General";
+        const readPermission = "*";
         const updatePermission = "Administration:General";
         const enum Fields {
             Id = "Id",
@@ -685,7 +685,7 @@ declare namespace Rental_SPA.Gestion {
         const localTextPrefix = "Gestion.ProductoDetalle";
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";
-        const readPermission = "Administration:General";
+        const readPermission = "*";
         const updatePermission = "Administration:General";
         const enum Fields {
             Id = "Id",
@@ -721,6 +721,7 @@ declare namespace Rental_SPA.Gestion {
         Nombre: Serenity.StringEditor;
         Activo: Serenity.BooleanEditor;
         IdTipoArriendo: Serenity.LookupEditor;
+        Descripcion: Serenity.HtmlContentEditor;
         ProductosDet: ProductosDetEditorCard;
         Cantidad: Serenity.IntegerEditor;
         Precio: Serenity.DecimalEditor;
@@ -746,16 +747,17 @@ declare namespace Rental_SPA.Gestion {
         Garantia?: number;
         IdTipoArriendo?: number;
         IdTipoArriendoTipo?: string;
+        Descripcion?: string;
         ProductosDet?: ProductoDetalleRow[];
     }
     namespace ProductosRow {
         const idProperty = "Id";
         const nameProperty = "Nombre";
         const localTextPrefix = "Gestion.Productos";
-        const deletePermission = "Administration:General";
-        const insertPermission = "Administration:General";
-        const readPermission = "Administration:General";
-        const updatePermission = "Administration:General";
+        const deletePermission = " Administration:General";
+        const insertPermission = " Administration:General";
+        const readPermission = "*";
+        const updatePermission = " Administration:General";
         const enum Fields {
             Id = "Id",
             Nombre = "Nombre",
@@ -767,6 +769,7 @@ declare namespace Rental_SPA.Gestion {
             Garantia = "Garantia",
             IdTipoArriendo = "IdTipoArriendo",
             IdTipoArriendoTipo = "IdTipoArriendoTipo",
+            Descripcion = "Descripcion",
             ProductosDet = "ProductosDet"
         }
     }
@@ -878,7 +881,7 @@ declare namespace Rental_SPA.Gestion {
         function getLookup(): Q.Lookup<TiposAdicionalesRow>;
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";
-        const readPermission = "Administration:General";
+        const readPermission = "*";
         const updatePermission = "Administration:General";
         const enum Fields {
             Id = "Id",
@@ -1770,6 +1773,15 @@ declare namespace Rental_SPA.Gestion {
     }
 }
 declare namespace Rental_SPA.Gestion {
+    interface productosParameters {
+        Items: ProductosRow[];
+    }
+    export class ProductosCard extends React.Component<productosParameters> {
+        render(): React.ReactNode;
+    }
+    export {};
+}
+declare namespace Rental_SPA.Gestion {
     class ProductosDetEditorCard extends Serenity.TemplatedWidget<any> implements Serenity.IGetEditValue, Serenity.ISetEditValue {
         private isDirty;
         private items;
@@ -1788,6 +1800,15 @@ declare namespace Rental_SPA.Gestion {
         setEditValue(source: any, prop: Serenity.PropertyItem): void;
         onChange: () => void;
     }
+}
+declare namespace Rental_SPA.Gestion {
+    interface productoParameters {
+        Producto: ProductosRow;
+    }
+    export class ProductoDetalle extends React.Component<productoParameters> {
+        render(): React.ReactNode;
+    }
+    export {};
 }
 declare namespace Rental_SPA.Gestion {
     class ProductosDialog extends Serenity.EntityDialog<ProductosRow, any> {
@@ -1813,6 +1834,15 @@ declare namespace Rental_SPA.Gestion {
         protected getService(): string;
         constructor(container: JQuery);
     }
+}
+declare namespace Rental_SPA.Gestion {
+    interface arriendoParameters {
+        Items: TipoArriendoRow[];
+    }
+    export class TipoArriendoCard extends React.Component<arriendoParameters> {
+        render(): React.ReactNode;
+    }
+    export {};
 }
 declare namespace Rental_SPA.Gestion {
     class TipoArriendoDialog extends Serenity.EntityDialog<TipoArriendoRow, any> {
@@ -2028,13 +2058,4 @@ declare namespace Rental_SPA.Sitio {
         protected getService(): string;
         constructor(container: JQuery);
     }
-}
-declare namespace Rental_SPA.Gestion {
-    interface arriendoParameters {
-        Items: TipoArriendoRow[];
-    }
-    export class TipoArriendoCard extends React.Component<arriendoParameters> {
-        render(): React.ReactNode;
-    }
-    export {};
 }

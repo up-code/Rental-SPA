@@ -1,0 +1,22 @@
+﻿@model int?
+@{
+    ViewData["Title"] = "Product";
+    Layout = MVC.Views.Shared._LayoutSitio;
+}
+
+<div class="container">
+    <div id="productList" class="row text-center justify-content-center">
+
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+    $().ready(function () {
+        Rental_SPA.Gestion.ProductosService.List({
+            EqualityFilter: { "IdTipo_Arriendo": @Model}
+        }, resp => {
+            ReactDOM.render(React.createElement(Rental_SPA.Gestion.ProductosCard, { Items: resp.Entities }), document.querySelector('#productList'));
+        })
+    })
+    </script>
+}

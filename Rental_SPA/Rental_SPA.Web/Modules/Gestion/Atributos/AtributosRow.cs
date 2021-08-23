@@ -10,7 +10,7 @@ namespace Rental_SPA.Gestion.Entities
 {
     [ConnectionKey("Default"), Module("Gestion"), TableName("[dbo].[Atributos]")]
     [DisplayName("Atributos"), InstanceName("Atributos")]
-    [ReadPermission("Administration:General")]
+    [ReadPermission("*")]
     [ModifyPermission("Administration:General")]
     public sealed class AtributosRow : Row<AtributosRow.RowFields>, IIdRow, INameRow
     {

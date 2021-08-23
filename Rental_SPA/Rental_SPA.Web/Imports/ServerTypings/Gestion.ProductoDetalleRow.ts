@@ -13,7 +13,7 @@
         export const localTextPrefix = 'Gestion.ProductoDetalle';
         export const deletePermission = 'Administration:General';
         export const insertPermission = 'Administration:General';
-        export const readPermission = 'Administration:General';
+        export const readPermission = '*';
         export const updatePermission = 'Administration:General';
 
         export declare const enum Fields {

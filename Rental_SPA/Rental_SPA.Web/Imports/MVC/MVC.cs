@@ -147,7 +147,8 @@ namespace MVC
             {
                 public const string NuestrosClientesIndex = "~/Modules/Sitio/NuestrosClientes/NuestrosClientesIndex.cshtml";
             }
-
+            public const string ProductDetail = "~/Views/Sitio/ProductDetail.cshtml";
+            public const string ProductList = "~/Views/Sitio/ProductList.cshtml";
             public static class Slider
             {
                 public const string SliderIndex = "~/Modules/Sitio/Slider/SliderIndex.cshtml";

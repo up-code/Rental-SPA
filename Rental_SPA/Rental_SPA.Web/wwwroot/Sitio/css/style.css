@@ -1674,3 +1674,214 @@ section {
 .my-3 {
   margin-bottom: 1rem !important;
 }
+
+/*Card para la lista de Productos*/
+.profile-card-6 {
+    max-width: 300px;
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+    .profile-card-6 img {
+        transition: all 0.15s linear;
+    }
+
+    .profile-card-6 .profile-name {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 25px;
+        font-weight: bold;
+        color: #FFF;
+        padding: 15px 20px;
+        background: linear-gradient(140deg, rgba(0, 0, 0, 0.4) 50%, rgba(255, 255, 0, 0) 50%);
+        transition: all 0.15s linear;
+    }
+
+    .profile-card-6 .profile-position {
+        position: absolute;
+        color: rgba(255, 255, 255, 0.4);
+        left: 30px;
+        top: 100px;
+        transition: all 0.15s linear;
+    }
+
+    .profile-card-6 .profile-overview {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 50%, rgba(255, 255, 0, 0));
+        color: #FFF;
+        padding: 50px 0px 20px 0px;
+        transition: all 0.15s linear;
+    }
+
+        .profile-card-6 .profile-overview h3 {
+            font-weight: bold;
+        }
+
+        .profile-card-6 .profile-overview p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+    .profile-card-6:hover img {
+        filter: brightness(80%);
+    }
+
+    .profile-card-6:hover .profile-name {
+        padding-left: 25px;
+        padding-top: 20px;
+    }
+
+    .profile-card-6:hover .profile-position {
+        left: 40px;
+    }
+
+    .profile-card-6:hover .profile-overview {
+        padding-bottom: 25px;
+    }
+
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900|Open Sans:400,600,800');
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+input,
+p,
+a {
+    font-family: "Open Sans";
+    margin: 0px;
+}
+
+/*Box Position Detail*/
+.box-position {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(100% + 150px);
+    height: calc(100% + 150px);
+    will-change: transform;
+    animation: bgPos 100s linear infinite;
+    transform: translate3d(-75px, -75px, 0) rotate(0.001deg);
+    background-position: 50% 50%;
+    background-size: cover;
+    z-index: -1;
+}
+
+/*
+*
+* Breadcrumbs
+*/
+
+
+.breadcrumbs-custom {
+    position: relative;
+    overflow: hidden;
+    padding: 40px 0;
+    text-align: center;
+    background-color: #cccccc;
+    z-index: 1;
+}
+
+.breadcrumbs-custom-title{
+    color:#FFF;
+    font-size: 48px;
+    text-transform: uppercase;
+}
+
+.breadcrumbs-custom-path {
+    margin-left: -15px;
+    margin-right: -15px;
+    font-size: 14px;
+    line-height: 1.33;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif, Arial, sans-serif;
+}
+
+    .breadcrumbs-custom-path > * {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .breadcrumbs-custom-path a {
+        display: inline;
+        vertical-align: middle;
+        color: #ffffff;
+    }
+
+        .breadcrumbs-custom-path a, .breadcrumbs-custom-path a:active, .breadcrumbs-custom-path a:focus {
+            color: #ffffff;
+        }
+
+            .breadcrumbs-custom-path a:hover {
+                text-decoration: underline;
+            }
+
+    .breadcrumbs-custom-path li {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+        .breadcrumbs-custom-path li::after {
+            content: "/";
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            right: -8px;
+            color: white;
+            transform: translate3d(0, -50%, 0);
+        }
+
+        .breadcrumbs-custom-path li:last-child:after {
+            display: none;
+        }
+
+    .breadcrumbs-custom-path a:hover {
+        color: #ffffff;
+    }
+
+    .breadcrumbs-custom-path li.active {
+        color: rgba(255, 255, 255, 0.53);
+    }
+
+* + .breadcrumbs-custom-path {
+    margin-top: 14px;
+}
+
+@media (min-width: 576px) {
+    * + .breadcrumbs-custom-path {
+        margin-top: 18px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .breadcrumbs-custom {
+        padding: 150px 0;
+    }
+}
+
+@media (min-width: 1600px) {
+    .breadcrumbs-custom-inset {
+        max-width: 1920px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 75px;
+        padding-right: 75px;
+    }
+}
+
+

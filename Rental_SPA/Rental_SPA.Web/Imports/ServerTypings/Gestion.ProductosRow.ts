@@ -10,6 +10,7 @@
         Garantia?: number;
         IdTipoArriendo?: number;
         IdTipoArriendoTipo?: string;
+        Descripcion?: string;
         ProductosDet?: ProductoDetalleRow[];
     }
 
@@ -17,10 +18,10 @@
         export const idProperty = 'Id';
         export const nameProperty = 'Nombre';
         export const localTextPrefix = 'Gestion.Productos';
-        export const deletePermission = 'Administration:General';
-        export const insertPermission = 'Administration:General';
-        export const readPermission = 'Administration:General';
-        export const updatePermission = 'Administration:General';
+        export const deletePermission = ' Administration:General';
+        export const insertPermission = ' Administration:General';
+        export const readPermission = '*';
+        export const updatePermission = ' Administration:General';
 
         export declare const enum Fields {
             Id = "Id",
@@ -33,6 +34,7 @@
             Garantia = "Garantia",
             IdTipoArriendo = "IdTipoArriendo",
             IdTipoArriendoTipo = "IdTipoArriendoTipo",
+            Descripcion = "Descripcion",
             ProductosDet = "ProductosDet"
         }
     }

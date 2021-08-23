@@ -11,7 +11,7 @@ namespace Rental_SPA.Gestion.Entities
 {
     [ConnectionKey("Default"), Module("Gestion"), TableName("[dbo].[Tipos_Adicionales]")]
     [DisplayName("Tipos Adicionales"), InstanceName("Tipos Adicionales")]
-    [ReadPermission("Administration:General")]
+    [ReadPermission("*")]
     [ModifyPermission("Administration:General")]
 
     [LookupScript]

@@ -9,8 +9,8 @@
                 <div className="owl-carousel" id="deals-discounts-carousel">
                 {this.props.Items.map<React.ReactNode>((item, i) => {
                     return (<div key={i} className="col-md-6 align-items-center text-align-center">
-                       
-                            <img src={"/upload/" + item.Logo} className="img-fluid" title={item.Nombre} />
+
+                        <img src={"/upload/" + item.Logo} className="img-fluid" title={item.Nombre} alt={item.Nombre} />
                        
                     </div>);
                     })
