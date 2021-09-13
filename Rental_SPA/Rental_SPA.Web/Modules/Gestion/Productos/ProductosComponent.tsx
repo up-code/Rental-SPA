@@ -17,20 +17,20 @@
                         <div className="profile-card-6">
                             <img src={"/upload/" + item.Foto} className="img img-responsive" height="400" />
                                 <div className="profile-name">{item.Nombre}</div>
-                                {//<div className="profile-position">{"Cantidad: " + item.Cantidad}</div>}
+                                
                         <div className="profile-overview">
                             <div className="profile-overview">
                                 <div className="row text-center justify-content-center">
-                                    <div className="col-xs-4 m-2">
-                                        <h3>{item.Cantidad}</h3>
+                                                <div className="col-xs-4 m-2">                                                    
+                                        <h4>{item.Cantidad}</h4>
                                         <p>Stock</p>
                                     </div>
                                                 <div className="col-xs-4 m-2">
-                                                    <h3>{formatter.format(item.Precio).replace("CLP", "$").replace(",",".")}</h3>
+                                                    <h4>{formatter.format(item.Precio).replace("CLP", "$").replace(",",".")}</h4>
                                         <p>Arriendo Diario</p>
                                     </div>
                                                 <div className="col-xs-4 m-2">
-                                                    <h3>{formatter.format(item.Garantia).replace("CLP", "$").replace(",", ".")}</h3>
+                                                    <h4>{formatter.format(item.Garantia).replace("CLP", "$").replace(",", ".")}</h4>
                                         <p>Garantía</p>
                                     </div>
                                 </div>

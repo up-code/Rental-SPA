@@ -1,39 +1,7 @@
 ﻿namespace Rental_SPA.Gestion {
     interface productoParameters {
         Producto: ProductosRow
-    }
-
-    interface tipoArriendoParameters {
-        IdTipoArriendo: number
-
-    }
-
-    const TipoArriendo: React.FC<tipoArriendoParameters> = ({ IdTipoArriendo }) => {
-        const [Tipos, setTipos] = React.useState<TipoArriendoRow[]>([]);      
-
-        React.useEffect(() => {
-            Rental_SPA.Gestion.TipoArriendoService.List({ EqualityFilter: { "Id": IdTipoArriendo } }, resp => {
-                setTipos(resp.Entities);
-            })
-        }, []);
-
-
-        //const [Adicionales, setAdicionales] = React.useState<TiposAdicionalesRow[]>([]);
-        //React.useEffect(() => {
-        //    Rental_SPA.Gestion.TiposAdicionalesService.List({ EqualityFilter: { "Id": IdDetalle} }, resp => {
-        //        setAdicionales(resp.Entities)
-        //    })
-        //},[]);
-
-        return <> {Tipos.map((item, i) => {
-            return <p key={i}>{ item.Nombre}</p>
-        })}</>
-    }
-
-
-    interface IdDetalle {
-        idDetalle: number
-    }
+    }   
     export class ProductoDetalle extends React.Component<productoParameters>{
 
         //private detalles: IdDetalle[];
@@ -80,9 +48,27 @@
 
                             
                         </div>
-                        <div className="row">
-                            
-                              <TipoArriendo IdTipoArriendo={this.props.Producto.IdTipoArriendo}/>
+                        <div className="row justify-content-center" style={{ marginTop:'4rem' }}>
+                            <h3 className="text-center"> Atributos del Producto</h3>
+                            <div className="col-lg-12">
+                                <div className="col-xs-6 mt-5">
+                                    <table className="table table-bordered">
+                                        <thead>
+
+                                        </thead>
+                                        <tbody>
+
+                                            {this.props.Producto.ProductosDet.map((item, i) => {
+                                                return <tr key={i} className="text-center">
+                                                    <td>{item.IdTipoAdicionalTitulo}</td>
+                                                    <td>{item.Valor}</td>
+                                                </tr>
+                                            })}
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
 
                       
                         </div>
@@ -101,6 +87,10 @@
                                 <p>Garantía</p>
                             </div>
                         </div>
+
+                       
+                        
+
                     </div>
                 </section>
 
