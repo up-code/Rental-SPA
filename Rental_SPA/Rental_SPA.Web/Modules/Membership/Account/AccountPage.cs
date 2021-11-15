@@ -44,7 +44,7 @@ namespace Rental_SPA.Membership.Pages
             return View(MVC.Views.Errors.AccessDenied, (object)returnURL);
         }
 
-        [HttpPost, JsonFilter]
+        [HttpPost, JsonRequest]
         public Result<ServiceResponse> Login(LoginRequest request,
             [FromServices] IUserPasswordValidator passwordValidator,
             [FromServices] IUserRetrieveService userRetriever,

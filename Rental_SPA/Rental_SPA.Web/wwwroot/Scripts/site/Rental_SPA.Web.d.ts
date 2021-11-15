@@ -2,6 +2,9 @@
 /// <reference types="jqueryui" />
 /// <reference types="react" />
 declare namespace Rental_SPA.Administration {
+    class LanguageColumns {
+        static columnsKey: string;
+    }
 }
 declare namespace Rental_SPA.Administration {
     interface LanguageForm {
@@ -55,8 +58,15 @@ declare namespace Rental_SPA.Administration {
     }
 }
 declare namespace Rental_SPA.Administration {
+    namespace PermissionKeys {
+        const Security = "Administration:Security";
+        const Translation = "Administration:Translation";
+    }
 }
 declare namespace Rental_SPA.Administration {
+    class RoleColumns {
+        static columnsKey: string;
+    }
 }
 declare namespace Rental_SPA.Administration {
     interface RoleForm {
@@ -193,6 +203,9 @@ declare namespace Rental_SPA.Administration {
     }
 }
 declare namespace Rental_SPA.Administration {
+    class UserColumns {
+        static columnsKey: string;
+    }
 }
 declare namespace Rental_SPA.Administration {
     interface UserForm {
@@ -453,6 +466,83 @@ declare namespace Rental_SPA {
     }
 }
 declare namespace Rental_SPA.Gestion {
+    interface ArriendoWizardForm {
+        WelcomeMessage: StaticTextBlock;
+        DireccionObra: Serenity.StringEditor;
+        Region: Serenity.IntegerEditor;
+        Ciudad: Serenity.StringEditor;
+        DetallesMessage: StaticTextBlock;
+        ConfirmacionMessage: StaticTextBlock;
+        ConfirmacionContext: StaticTextBlock;
+    }
+    class ArriendoWizardForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    interface ArriendoWizardRow {
+        Id?: number;
+        DireccionObra?: string;
+        Region?: number;
+        Ciudad?: string;
+        IdCliente?: number;
+        IdProducto?: number;
+        Garantia?: number;
+        ConGarantia?: boolean;
+        FechaInicio?: string;
+        FechaDevolucion?: string;
+        Neto?: number;
+        Iva?: number;
+        Total?: number;
+    }
+    namespace ArriendoWizardRow {
+        const idProperty = "Id";
+        const nameProperty = "DireccionObra";
+        const localTextPrefix = "Gestion.ArriendoWizard";
+        const deletePermission = "Administration:General";
+        const insertPermission = "*";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            Id = "Id",
+            DireccionObra = "DireccionObra",
+            Region = "Region",
+            Ciudad = "Ciudad",
+            IdCliente = "IdCliente",
+            IdProducto = "IdProducto",
+            Garantia = "Garantia",
+            ConGarantia = "ConGarantia",
+            FechaInicio = "FechaInicio",
+            FechaDevolucion = "FechaDevolucion",
+            Neto = "Neto",
+            Iva = "Iva",
+            Total = "Total"
+        }
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    namespace ArriendoWizardService {
+        const baseUrl = "Gestion/ArriendoWizard";
+        function Create(request: Serenity.SaveRequest<ArriendoWizardRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ArriendoWizardRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ArriendoWizardRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ArriendoWizardRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Gestion/ArriendoWizard/Create",
+            Update = "Gestion/ArriendoWizard/Update",
+            Delete = "Gestion/ArriendoWizard/Delete",
+            Retrieve = "Gestion/ArriendoWizard/Retrieve",
+            List = "Gestion/ArriendoWizard/List"
+        }
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    class ArriendosColumns {
+        static columnsKey: string;
+    }
 }
 declare namespace Rental_SPA.Gestion {
     interface ArriendosForm {
@@ -534,6 +624,9 @@ declare namespace Rental_SPA.Gestion {
     }
 }
 declare namespace Rental_SPA.Gestion {
+    class AtributosColumns {
+        static columnsKey: string;
+    }
 }
 declare namespace Rental_SPA.Gestion {
     interface AtributosForm {
@@ -591,6 +684,9 @@ declare namespace Rental_SPA.Gestion {
     }
 }
 declare namespace Rental_SPA.Gestion {
+    class ClientesColumns {
+        static columnsKey: string;
+    }
 }
 declare namespace Rental_SPA.Gestion {
     interface ClientesForm {
@@ -657,6 +753,9 @@ declare namespace Rental_SPA.Gestion {
     }
 }
 declare namespace Rental_SPA.Gestion {
+    class ProductoDetalleColumns {
+        static columnsKey: string;
+    }
 }
 declare namespace Rental_SPA.Gestion {
     interface ProductoDetalleForm {
@@ -715,6 +814,9 @@ declare namespace Rental_SPA.Gestion {
     }
 }
 declare namespace Rental_SPA.Gestion {
+    class ProductosColumns {
+        static columnsKey: string;
+    }
 }
 declare namespace Rental_SPA.Gestion {
     interface ProductosForm {
@@ -792,6 +894,9 @@ declare namespace Rental_SPA.Gestion {
     }
 }
 declare namespace Rental_SPA.Gestion {
+    class TipoArriendoColumns {
+        static columnsKey: string;
+    }
 }
 declare namespace Rental_SPA.Gestion {
     interface TipoArriendoForm {
@@ -851,6 +956,9 @@ declare namespace Rental_SPA.Gestion {
     }
 }
 declare namespace Rental_SPA.Gestion {
+    class TiposAdicionalesColumns {
+        static columnsKey: string;
+    }
 }
 declare namespace Rental_SPA.Gestion {
     interface TiposAdicionalesForm {
@@ -1023,6 +1131,9 @@ declare namespace Rental_SPA {
     }
 }
 declare namespace Rental_SPA.Sitio {
+    class HistoriaColumns {
+        static columnsKey: string;
+    }
 }
 declare namespace Rental_SPA.Sitio {
     interface HistoriaForm {
@@ -1077,6 +1188,9 @@ declare namespace Rental_SPA.Sitio {
     }
 }
 declare namespace Rental_SPA.Sitio {
+    class NosotrosColumns {
+        static columnsKey: string;
+    }
 }
 declare namespace Rental_SPA.Sitio {
     interface NosotrosForm {
@@ -1137,6 +1251,9 @@ declare namespace Rental_SPA.Sitio {
     }
 }
 declare namespace Rental_SPA.Sitio {
+    class NuestrosClientesColumns {
+        static columnsKey: string;
+    }
 }
 declare namespace Rental_SPA.Sitio {
     interface NuestrosClientesForm {
@@ -1191,6 +1308,9 @@ declare namespace Rental_SPA.Sitio {
     }
 }
 declare namespace Rental_SPA.Sitio {
+    class SliderColumns {
+        static columnsKey: string;
+    }
 }
 declare namespace Rental_SPA.Sitio {
     interface SliderForm {
@@ -1591,6 +1711,94 @@ declare namespace Rental_SPA.Common {
         protected getCurrentTheme(): string;
     }
 }
+declare namespace Serenity {
+    class SingleLineTextFormatter implements Slick.Formatter {
+        format(ctx: Slick.FormatterContext): string;
+        static formatValue(value: string): string;
+    }
+}
+declare namespace Serenity {
+    /**
+     * A dialog/panel base class that easily generates a wizard UI from tabs in a form definition (e.g. Form.cs)
+     */
+    abstract class WizardDialog<TEntity, TOptions> extends Serenity.TemplatedDialog<TOptions> {
+        private wizardGrid;
+        /**
+         * Creates a new wizard dialog
+         * @param opt options, might be used by derived classes
+         */
+        constructor(opt?: TOptions);
+        /**
+         * gets property grid options
+         */
+        protected getPropertyGridOptions(): PropertyGridOptions;
+        /**
+         * gets form key to use to load property items / tabs
+         */
+        protected getFormKey(): string;
+        /**
+         * gets local text prefix for labels
+         */
+        protected getLocalTextPrefix(): string;
+        /**
+         * gets list of property items to shown on form, uses form key to load items by default
+         */
+        protected getPropertyItems(): Serenity.PropertyItem[];
+        /**
+         * gets initial entity to load onto form, override these to customize initial form values
+         */
+        protected getInitialEntity(): TEntity;
+        protected get maxSteps(): number;
+        /**
+         * moves to a step, by calling one of next, back or finish methods based on target step
+         * @param toStep the target step to move to
+         */
+        protected moveToStep(toStep: number): void;
+        private _step;
+        protected get step(): number;
+        protected set step(value: number);
+        /**
+         * called to reset the form, and go back to first step
+         */
+        protected reset(): void;
+        /**
+         * is called when user clicks the Finish button (next button on last step)
+         */
+        protected finish(): void;
+        /**
+         * next method is called when user tries to go forward
+         * @param toStep the step user is trying to move to, usually one step ahead
+         */
+        protected next(toStep: number): void;
+        /**
+         * back method is called when user tries to go backward
+         * @param toStep the step user is trying to move to, usually one step back but can also be multiple
+         */
+        protected back(toStep: number): void;
+        private getStepLink;
+        private getStepPanel;
+        /**
+         * make sure derived classes use WizardDialog template,
+         * if they don't define one of their own
+         */
+        protected getFallbackTemplate(): string;
+        /**
+         * gets cancel confirmation message, return null to disable confirmation
+         */
+        protected getCancelMessage(): string;
+        /**
+         * confirms when user tries to cancel or close the wizard
+         * @param e
+         */
+        protected confirmCancel(e: JQueryEventObject): void;
+        /** gets save entity from form, optionally from a limited list of steps (tabs)
+         * @param steps the list of steps to read data from, pass null to get all
+         */
+        protected getSaveEntity(steps?: number[]): TEntity;
+        protected get compactSteps(): boolean;
+        protected set compactSteps(value: boolean);
+    }
+}
 declare var jsPDF: any;
 declare namespace Rental_SPA.Common {
     interface PdfExportOptions {
@@ -1890,6 +2098,18 @@ declare namespace Rental_SPA.Gestion {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    class ArriendoWizardDialog extends Serenity.WizardDialog<ArriendoWizardRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected form: ArriendoWizardForm;
+        constructor(opt?: any);
+        protected next(toStep: number): void;
+        protected confirmCancel(e: JQueryEventObject): void;
+        protected finish(): void;
     }
 }
 declare namespace Rental_SPA.Membership {

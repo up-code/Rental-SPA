@@ -11,7 +11,7 @@
       "destination": "wwwroot/lib/react-dom/"
     },
     {
-      "library": "react-bootstrap@1.6.1",
+      "library": "react-bootstrap@1.6.4",
       "destination": "wwwroot/lib/react-bootstrap/"
     }
   ]

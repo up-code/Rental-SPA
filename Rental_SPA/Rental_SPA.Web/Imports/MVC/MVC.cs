@@ -88,6 +88,11 @@ namespace MVC
                 public const string TiposAdicionalesIndex = "~/Modules/Gestion/TiposAdicionales/TiposAdicionalesIndex.cshtml";
             }
 
+            public static class Wizard
+            {
+                public const string ArriendoWizardIndex = "~/Modules/Gestion/Wizard/ArriendoWizardIndex.cshtml";
+            }
+
         }
 
         public static class Membership
