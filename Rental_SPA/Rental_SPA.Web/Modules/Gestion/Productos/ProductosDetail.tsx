@@ -88,8 +88,10 @@
                             </div>
                         </div>
 
-                       
-                        
+
+                        <div className="col-lg-12 text-center mt-5">
+                            <button className="btn btn-success "> Arrendar...</button>
+                        </div>
 
                     </div>
                 </section>

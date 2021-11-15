@@ -10,3 +10,4 @@ using MyPages = Rental_SPA.Gestion.Pages;
 //[assembly: NavigationLink(5000, "Gestion/Nomencladores/Atributos", typeof(MyPages.AtributosController), icon: "fa-diamond text-green")]
 [assembly: NavigationLink(5000, "Gestion/Nomencladores/Tipo Arriendo", typeof(MyPages.TipoArriendoController), icon: "fa-flag text-green")]
 [assembly: NavigationLink(5000, "Gestion/Nomencladores/Tipos Adicionales", typeof(MyPages.TiposAdicionalesController), icon: "fa-magic text-green")]
+[assembly: NavigationLink(int.MaxValue, "Gestion/Regiones", typeof(MyPages.RegionesController), icon: "fa-thumb-tack text-green")]

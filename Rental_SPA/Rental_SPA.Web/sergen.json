@@ -56,6 +56,12 @@
           "PermissionKey": "Administration:General"
         },
         {
+          "Tablename": "dbo.Regiones",
+          "Identifier": "Regiones",
+          "Module": "Gestion",
+          "PermissionKey": "Administration:General"
+        },
+        {
           "Tablename": "dbo.Slider",
           "Identifier": "Slider",
           "Module": "Sitio",

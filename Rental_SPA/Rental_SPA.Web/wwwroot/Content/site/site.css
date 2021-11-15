@@ -8158,3 +8158,9 @@ section.content > .s-DataGrid {
 .s-Gestion-TiposAdicionalesDialog .caption {
   width: 150px;
 }
+.s-Gestion-RegionesDialog > .size {
+  width: 650px;
+}
+.s-Gestion-RegionesDialog .caption {
+  width: 150px;
+}
