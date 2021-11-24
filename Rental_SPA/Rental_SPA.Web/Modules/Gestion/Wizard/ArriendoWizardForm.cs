@@ -14,13 +14,14 @@ namespace Rental_SPA.Gestion.Forms
         [Tab("Servicio")]
 
         [IgnoreName]
-        [StaticTextBlock(HideLabel = true, IsHtml = true, Text = "<h4 class='text-blue'>Servicio</h4><p>Seleccione el Servicio, Categía y Profesional que desea consultar.</p>")]
+        [StaticTextBlock(HideLabel = true, IsHtml = true, Text = "<h4 class='text-blue'>Servicio</h4><p>Seleccione el Servicio a adquirir.</p>")]
         public string WelcomeMessage { get; set; }
 
         [OneThirdWidth]        
         public string DireccionObra { get; set; }
 
-        [OneThirdWidth]        
+        [OneThirdWidth]
+        [LookupEditor(typeof(RegionesRow))]
         public int? Region { get; set; }
 
         [OneThirdWidth]        
@@ -29,13 +30,13 @@ namespace Rental_SPA.Gestion.Forms
         [Tab("Detalles")]
 
         [IgnoreName]
-        [StaticTextBlock(HideLabel = true, IsHtml = true, Text = "<h4 class='text-blue'>Datos de Usted</h4><p>Por favor proporciona tus datos en este formulario para proceder con la reserva.</p>")]
+        [StaticTextBlock(HideLabel = true, IsHtml = true, Text = "<h4 class='text-blue'>Datos de Usted</h4><p>Por favor proporciona tus datos en este formulario para proceder con el arriendo.</p>")]
         public string DetallesMessage { get; set; }        
 
         [Tab("Confirmación")]
 
         [IgnoreName]
-        [StaticTextBlock(HideLabel = true, IsHtml = true, Text = "<h4 class='text-blue'>Confirmación</h4><p>Se realizará una reserva con estos datos.</p>")]
+        [StaticTextBlock(HideLabel = true, IsHtml = true, Text = "<h4 class='text-blue'>Confirmación</h4><p>Se realizará una confirmación con estos datos.</p>")]
         public string ConfirmacionMessage { get; set; }
 
         [IgnoreName]

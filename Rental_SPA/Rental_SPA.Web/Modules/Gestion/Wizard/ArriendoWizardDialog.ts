@@ -46,7 +46,7 @@ namespace Rental_SPA.Gestion {
 <div class="row">&nbsp;</div>
 
 <br/>
-<div class="text-center"><h3 style="color: #1c5c93; font-family:"Open Sans",sans-serif;font-size:20px">Valor de la Consulta: ${Q.format(Q.text('Site.Reports.AmountPay'))}</h3></div>
+<div class="text-center"><h3 style="color: #1c5c93; font-family:"Open Sans",sans-serif;font-size:20px">Valor del Arriendo: ${Q.format(Q.text('Site.Reports.AmountPay'))}</h3></div>
                                                                 </div>`); 
                     super.next(toStep);
                     break;
@@ -76,7 +76,7 @@ namespace Rental_SPA.Gestion {
             if (this.validateForm()) {
                 Rental_SPA.Gestion.ArriendoWizardService.Create({ Entity: this.getSaveEntity() }, resp => {
 
-                    Q.notifySuccess("Se creó su cita satisfactoriamente !");
+                    Q.notifySuccess("Se creó su Arriendo satisfactoriamente !");
                     super.finish();
 
                 });

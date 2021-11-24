@@ -12,6 +12,7 @@ namespace Rental_SPA.Gestion.Entities
     [DisplayName("Regiones"), InstanceName("Regiones")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
+    [LookupScript(Permission = "*")]
     public sealed class RegionesRow : Row<RegionesRow.RowFields>, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity, IdProperty]

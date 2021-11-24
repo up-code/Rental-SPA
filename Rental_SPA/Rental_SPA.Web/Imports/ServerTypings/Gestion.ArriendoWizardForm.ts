@@ -2,7 +2,7 @@
     export interface ArriendoWizardForm {
         WelcomeMessage: StaticTextBlock;
         DireccionObra: Serenity.StringEditor;
-        Region: Serenity.IntegerEditor;
+        Region: Serenity.LookupEditor;
         Ciudad: Serenity.StringEditor;
         DetallesMessage: StaticTextBlock;
         ConfirmacionMessage: StaticTextBlock;
@@ -22,7 +22,7 @@
                 var s = Serenity;
                 var w0 = StaticTextBlock;
                 var w1 = s.StringEditor;
-                var w2 = s.IntegerEditor;
+                var w2 = s.LookupEditor;
 
                 Q.initFormType(ArriendoWizardForm, [
                     'WelcomeMessage', w0,
