@@ -21,6 +21,7 @@ namespace Rental_SPA.Gestion.Forms
         public string DireccionObra { get; set; }
 
         [HalfWidth]
+        [LookupEditor(typeof(RegionesRow))]
         public int? Region { get; set; }
 
         [HalfWidth]

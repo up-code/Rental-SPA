@@ -581,7 +581,7 @@ declare namespace Rental_SPA.Gestion {
     interface ArriendosForm {
         Id: Serenity.StringEditor;
         DireccionObra: Serenity.StringEditor;
-        Region: Serenity.IntegerEditor;
+        Region: Serenity.LookupEditor;
         Ciudad: Serenity.StringEditor;
         IdCliente: Serenity.LookupEditor;
         IdProducto: Serenity.LookupEditor;

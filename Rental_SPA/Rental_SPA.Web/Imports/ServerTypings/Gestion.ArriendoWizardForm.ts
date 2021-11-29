@@ -2,7 +2,7 @@
     export interface ArriendoWizardForm {
         WelcomeMessage: StaticTextBlock;
         DireccionObra: Serenity.StringEditor;
-        Region: Serenity.IntegerEditor;
+        Region: Serenity.LookupEditor;
         Ciudad: Serenity.StringEditor;
         ProductoMessage: StaticTextBlock;
         IdProducto: Serenity.LookupEditor;
@@ -39,9 +39,9 @@
                 var s = Serenity;
                 var w0 = StaticTextBlock;
                 var w1 = s.StringEditor;
-                var w2 = s.IntegerEditor;
-                var w3 = s.LookupEditor;
-                var w4 = s.DateEditor;
+                var w2 = s.LookupEditor;
+                var w3 = s.DateEditor;
+                var w4 = s.IntegerEditor;
                 var w5 = s.BooleanEditor;
                 var w6 = s.DecimalEditor;
                 var w7 = s.MaskedEditor;
@@ -53,10 +53,10 @@
                     'Region', w2,
                     'Ciudad', w1,
                     'ProductoMessage', w0,
-                    'IdProducto', w3,
-                    'FechaInicio', w4,
-                    'FechaDevolucion', w4,
-                    'Cantidad', w2,
+                    'IdProducto', w2,
+                    'FechaInicio', w3,
+                    'FechaDevolucion', w3,
+                    'Cantidad', w4,
                     'ConGarantia', w5,
                     'Garantia', w6,
                     'Neto', w6,

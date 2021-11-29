@@ -2,7 +2,7 @@
     export interface ArriendosForm {
         Id: Serenity.StringEditor;
         DireccionObra: Serenity.StringEditor;
-        Region: Serenity.IntegerEditor;
+        Region: Serenity.LookupEditor;
         Ciudad: Serenity.StringEditor;
         IdCliente: Serenity.LookupEditor;
         IdProducto: Serenity.LookupEditor;
@@ -28,9 +28,9 @@
 
                 var s = Serenity;
                 var w0 = s.StringEditor;
-                var w1 = s.IntegerEditor;
-                var w2 = s.LookupEditor;
-                var w3 = s.DateEditor;
+                var w1 = s.LookupEditor;
+                var w2 = s.DateEditor;
+                var w3 = s.IntegerEditor;
                 var w4 = s.BooleanEditor;
                 var w5 = s.DecimalEditor;
 
@@ -39,11 +39,11 @@
                     'DireccionObra', w0,
                     'Region', w1,
                     'Ciudad', w0,
-                    'IdCliente', w2,
-                    'IdProducto', w2,
-                    'FechaInicio', w3,
-                    'FechaDevolucion', w3,
-                    'Cantidad', w1,
+                    'IdCliente', w1,
+                    'IdProducto', w1,
+                    'FechaInicio', w2,
+                    'FechaDevolucion', w2,
+                    'Cantidad', w3,
                     'ConGarantia', w4,
                     'Garantia', w5,
                     'Neto', w5,

@@ -20,6 +20,7 @@ namespace Rental_SPA.Gestion.Forms
         public String DireccionObra { get; set; }
 
         [HalfWidth]
+        [LookupEditor(typeof(RegionesRow))]
         public Int32 Region { get; set; }
         [HalfWidth]
         public String Ciudad { get; set; }
