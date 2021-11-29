@@ -469,7 +469,7 @@ declare namespace Rental_SPA.Gestion {
     interface ArriendoWizardForm {
         WelcomeMessage: StaticTextBlock;
         DireccionObra: Serenity.StringEditor;
-        Region: Serenity.IntegerEditor;
+        Region: Serenity.LookupEditor;
         Ciudad: Serenity.StringEditor;
         ProductoMessage: StaticTextBlock;
         IdProducto: Serenity.LookupEditor;
@@ -933,6 +933,62 @@ declare namespace Rental_SPA.Gestion {
             Delete = "Gestion/Productos/Delete",
             Retrieve = "Gestion/Productos/Retrieve",
             List = "Gestion/Productos/List"
+        }
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    class RegionesColumns {
+        static columnsKey: string;
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    interface RegionesForm {
+        Nombre: Serenity.StringEditor;
+        Sigla: Serenity.StringEditor;
+    }
+    class RegionesForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    interface RegionesRow {
+        Id?: number;
+        Nombre?: string;
+        Sigla?: string;
+    }
+    namespace RegionesRow {
+        const idProperty = "Id";
+        const nameProperty = "Nombre";
+        const localTextPrefix = "Gestion.Regiones";
+        const lookupKey = "Gestion.Regiones";
+        function getLookup(): Q.Lookup<RegionesRow>;
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            Id = "Id",
+            Nombre = "Nombre",
+            Sigla = "Sigla"
+        }
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    namespace RegionesService {
+        const baseUrl = "Gestion/Regiones";
+        function Create(request: Serenity.SaveRequest<RegionesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<RegionesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RegionesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RegionesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Gestion/Regiones/Create",
+            Update = "Gestion/Regiones/Update",
+            Delete = "Gestion/Regiones/Delete",
+            Retrieve = "Gestion/Regiones/Retrieve",
+            List = "Gestion/Regiones/List"
         }
     }
 }
@@ -2088,6 +2144,30 @@ declare namespace Rental_SPA.Gestion {
     class ProductosGrid extends Serenity.EntityGrid<ProductosRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof ProductosDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    class RegionesDialog extends Serenity.EntityDialog<RegionesRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: RegionesForm;
+    }
+}
+declare namespace Rental_SPA.Gestion {
+    class RegionesGrid extends Serenity.EntityGrid<RegionesRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof RegionesDialog;
         protected getIdProperty(): string;
         protected getInsertPermission(): string;
         protected getLocalTextPrefix(): string;

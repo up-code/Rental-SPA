@@ -73,6 +73,11 @@ namespace MVC
                 public const string ProductosIndex = "~/Modules/Gestion/Productos/ProductosIndex.cshtml";
             }
 
+            public static class Regiones
+            {
+                public const string RegionesIndex = "~/Modules/Gestion/Regiones/RegionesIndex.cshtml";
+            }
+
             public static class TipoArriendo
             {
                 public const string TipoArriendoIndex = "~/Modules/Gestion/TipoArriendo/TipoArriendoIndex.cshtml";
