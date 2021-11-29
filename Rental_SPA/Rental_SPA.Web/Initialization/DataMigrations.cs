@@ -202,12 +202,12 @@ namespace Rental_SPA
 
             // safety check to ensure that we are not modifying an arbitrary database.
             // remove these lines if you want Rental_SPA migrations to run on your DB.
-            if (!isOracle && cs.ConnectionString.IndexOf(typeof(DataMigrations).Namespace +
-                    @"_" + databaseKey + "_v1", StringComparison.OrdinalIgnoreCase) < 0)
-            {
-                SkippedMigrations = true;
-                return;
-            }
+            //if (!isOracle && cs.ConnectionString.IndexOf(typeof(DataMigrations).Namespace +
+            //        @"_" + databaseKey + "_v1", StringComparison.OrdinalIgnoreCase) < 0)
+            //{
+            //    SkippedMigrations = true;
+            //    return;
+            //}
 
             string databaseType = isOracle ? "OracleManaged" : serverType;
 

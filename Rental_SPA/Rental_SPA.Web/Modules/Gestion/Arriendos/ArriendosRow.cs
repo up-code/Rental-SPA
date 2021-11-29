@@ -2,6 +2,7 @@
 using Serenity.ComponentModel;
 using Serenity.Data;
 using Serenity.Data.Mapping;
+
 using System;
 using System.ComponentModel;
 using System.IO;
@@ -21,14 +22,14 @@ namespace Rental_SPA.Gestion.Entities
             set => fields.Id[this] = value;
         }
 
-        [DisplayName("Direccion Obra"), Column("Direccion_Obra"), Size(250), NotNull, QuickSearch, NameProperty]
+        [DisplayName("Dirección Obra"), Column("Direccion_Obra"), Size(250), NotNull, QuickSearch, NameProperty]
         public String DireccionObra
         {
             get => fields.DireccionObra[this];
             set => fields.DireccionObra[this] = value;
         }
 
-        [DisplayName("Region")]
+        [DisplayName("Región")]
         public Int32? Region
         {
             get => fields.Region[this];
@@ -42,18 +43,25 @@ namespace Rental_SPA.Gestion.Entities
             set => fields.Ciudad[this] = value;
         }
 
-        [DisplayName("Id Cliente")]
+        [DisplayName("Cliente")]
         public Int32? IdCliente
         {
             get => fields.IdCliente[this];
             set => fields.IdCliente[this] = value;
         }
 
-        [DisplayName("Id Producto")]
+        [DisplayName("Producto")]
         public Int32? IdProducto
         {
             get => fields.IdProducto[this];
             set => fields.IdProducto[this] = value;
+        }
+
+        [DisplayName("Cantidad")]
+        public Int32? Cantidad
+        {
+            get => fields.Cantidad[this];
+            set => fields.Cantidad[this] = value;
         }
 
         [DisplayName("Garantia")]
@@ -77,7 +85,7 @@ namespace Rental_SPA.Gestion.Entities
             set => fields.FechaInicio[this] = value;
         }
 
-        [DisplayName("Fecha Devolucion"), Column("Fecha_Devolucion")]
+        [DisplayName("Fecha Devolución"), Column("Fecha_Devolucion")]
         public DateTime? FechaDevolucion
         {
             get => fields.FechaDevolucion[this];
@@ -123,6 +131,7 @@ namespace Rental_SPA.Gestion.Entities
             public StringField Ciudad;
             public Int32Field IdCliente;
             public Int32Field IdProducto;
+            public Int32Field Cantidad;
             public DoubleField Garantia;
             public BooleanField ConGarantia;
             public DateTimeField FechaInicio;

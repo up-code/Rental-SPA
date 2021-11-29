@@ -12,10 +12,16 @@ namespace Rental_SPA.Gestion.Forms
     [BasedOnRow(typeof(Entities.TipoArriendoRow), CheckNames = true)]
     public class TipoArriendoForm
     {
+        [Category("Detalles")]
         public String Tipo { get; set; }
         public String Codigo { get; set; }
+
+        [EnumEditor]
+        public TipoArriendoCotizacion Cotizacion { get; set; }
+
         [CheckLookupEditor(typeof(Entities.TiposAdicionalesRow), ShowSelectAll = true, Delimited = true)]
         public String Detalles { get; set; }
+
         [Category("Foto")]
 
         [LabelWidth(0), DisplayName("")]

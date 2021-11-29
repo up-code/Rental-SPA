@@ -6,6 +6,7 @@
         Ciudad?: string;
         IdCliente?: number;
         IdProducto?: number;
+        Cantidad?: number;
         Garantia?: number;
         ConGarantia?: boolean;
         FechaInicio?: string;
@@ -31,6 +32,7 @@
             Ciudad = "Ciudad",
             IdCliente = "IdCliente",
             IdProducto = "IdProducto",
+            Cantidad = "Cantidad",
             Garantia = "Garantia",
             ConGarantia = "ConGarantia",
             FechaInicio = "FechaInicio",

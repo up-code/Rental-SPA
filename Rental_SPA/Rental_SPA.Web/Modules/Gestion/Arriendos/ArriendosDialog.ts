@@ -2,6 +2,7 @@
 namespace Rental_SPA.Gestion {
 
     @Serenity.Decorators.registerClass()
+    @Serenity.Decorators.panel()
     export class ArriendosDialog extends Serenity.EntityDialog<ArriendosRow, any> {
         protected getFormKey() { return ArriendosForm.formKey; }
         protected getIdProperty() { return ArriendosRow.idProperty; }

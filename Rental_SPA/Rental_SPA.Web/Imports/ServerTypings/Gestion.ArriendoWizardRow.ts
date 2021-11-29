@@ -13,6 +13,14 @@
         Neto?: number;
         Iva?: number;
         Total?: number;
+        Cantidad?: number;
+        Rut?: string;
+        RazonSocial?: string;
+        NombreFantasia?: string;
+        Direccion?: string;
+        ClienteCiudad?: string;
+        Telefono?: string;
+        EMail?: string;
     }
 
     export namespace ArriendoWizardRow {
@@ -37,7 +45,15 @@
             FechaDevolucion = "FechaDevolucion",
             Neto = "Neto",
             Iva = "Iva",
-            Total = "Total"
+            Total = "Total",
+            Cantidad = "Cantidad",
+            Rut = "Rut",
+            RazonSocial = "RazonSocial",
+            NombreFantasia = "NombreFantasia",
+            Direccion = "Direccion",
+            ClienteCiudad = "ClienteCiudad",
+            Telefono = "Telefono",
+            EMail = "EMail"
         }
     }
 }

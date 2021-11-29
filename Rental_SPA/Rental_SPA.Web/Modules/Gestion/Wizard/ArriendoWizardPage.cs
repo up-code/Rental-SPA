@@ -8,10 +8,10 @@ namespace Rental_SPA.Gestion.Pages
     //[PageAuthorize(typeof(Entities.ArriendoWizardRow))]
     public class ArriendoWizardController : Controller
     {
-        [Route("Wizard")]
-        public ActionResult Index()
+        [Route("Wizard/{id?}")]
+        public ActionResult Index(int id)
         {
-            return View(MVC.Views.Gestion.Wizard.ArriendoWizardIndex);
+            return View(MVC.Views.Gestion.Wizard.ArriendoWizardIndex, id);
         }
     }
 }

@@ -1,15 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Configuration;
+
 using MimeKit;
+
 using Rental_SPA.Common;
+
 using Serenity;
 using Serenity.Data;
 using Serenity.Services;
 using Serenity.Web;
+
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
+
 using MyRow = Rental_SPA.Gestion.Entities.ArriendoWizardRow;
 
 namespace Rental_SPA.Gestion.Repositories
@@ -34,39 +39,48 @@ namespace Rental_SPA.Gestion.Repositories
         {
             var returnValue = new SaveResponse();
 
-            //// Guardo el Paciente
-            //PacientesRepository pacientesRepository = new(Context);
-            //SaveResponse pacientesResponse = pacientesRepository.Create(uow, new SaveRequest<Entities.PacientesRow>
-            //{
-            //    Entity = new Entities.PacientesRow
-            //    {
-            //        Nombres = request.Entity.Nombres,
-            //        Apellidos = request.Entity.Apellidos,
-            //        Email = request.Entity.Email,
-            //        Telefono = request.Entity.Telefono,
-            //        Notas = request.Entity.Notas,
-            //        FechaCreacion = DateTime.Now
-            //    }
-            //});
+            // Guardo el Cliente
+            ClientesRepository clientesRepository = new(Context);
+            SaveResponse clientesResponse = clientesRepository.Create(uow, new SaveRequest<Entities.ClientesRow>
+            {
+                Entity = new Entities.ClientesRow
+                {
+                    Rut = request.Entity.Rut,
+                    RazonSocial = request.Entity.RazonSocial,
+                    NombreFantasia = request.Entity.NombreFantasia,
+                    Direccion = request.Entity.Direccion,
+                    Ciudad = request.Entity.ClienteCiudad,
+                    Telefono = request.Entity.Telefono,
+                    EMail = request.Entity.EMail
+                }
+            });
 
-            //if (!string.IsNullOrEmpty(pacientesResponse?.Error?.Message))
-            //{
-            //    throw new Exception(pacientesResponse.Error.Message);
-            //}
+            if (!string.IsNullOrEmpty(clientesResponse?.Error?.Message))
+            {
+                throw new Exception(clientesResponse.Error.Message);
+            }
 
-            // Guardo la cita.
+            // TODO: Validar stock del idproducto!
+
+            // Guardo el arriendo.
             ArriendosRepository ArriendoRepository = new(Context);
             SaveResponse ArriendoResponse = ArriendoRepository.Create(uow, new SaveRequest<Entities.ArriendosRow>
             {
                 Entity = new Entities.ArriendosRow
                 {
-                    //IdCategoria = request.Entity.IdCategoria,
-                    //IdPaciente = (int)(long)pacientesResponse.EntityId,
-                    //IdServicio = request.Entity.IdServicio,
-                    //FechaDesde = request.Entity.HorarioDisponible.FechaDesde,
-                    //FechaHasta = request.Entity.HorarioDisponible.FechaHasta,
-                    //IdProfesional = request.Entity.HorarioDisponible.IdProfesional,
-                    //IdEstado = 1   // OK
+                    DireccionObra = request.Entity.DireccionObra,
+                    Region = request.Entity.Region,
+                    Ciudad = request.Entity.Ciudad,
+                    IdCliente = (int)(long)clientesResponse.EntityId,
+                    IdProducto = request.Entity.IdProducto,
+                    Cantidad = request.Entity.Cantidad,
+                    Garantia = request.Entity.Garantia,
+                    ConGarantia = request.Entity.ConGarantia,
+                    FechaInicio = request.Entity.FechaInicio,
+                    FechaDevolucion = request.Entity.FechaDevolucion,
+                    Neto = request.Entity.Neto,
+                    Iva = request.Entity.Iva,
+                    Total = request.Entity.Total
                 }
             });
 
@@ -76,7 +90,7 @@ namespace Rental_SPA.Gestion.Repositories
 
                 returnValue.EntityId = ArriendoResponse.EntityId;
 
-                List<Task> task = new List<Task>();
+                // List<Task> task = new List<Task>();
 
                 //// Mandamos el email al Paciente
                 //task.Add(Task.Run(() =>
@@ -106,7 +120,7 @@ namespace Rental_SPA.Gestion.Repositories
                 //    EmailSender.Send(emailDr, true);
                 //}));
 
-                Task.WaitAll(task.ToArray());
+                // Task.WaitAll(task.ToArray());
             }
 
             return returnValue;

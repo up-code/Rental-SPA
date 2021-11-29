@@ -471,7 +471,24 @@ declare namespace Rental_SPA.Gestion {
         DireccionObra: Serenity.StringEditor;
         Region: Serenity.IntegerEditor;
         Ciudad: Serenity.StringEditor;
+        ProductoMessage: StaticTextBlock;
+        IdProducto: Serenity.LookupEditor;
+        FechaInicio: Serenity.DateEditor;
+        FechaDevolucion: Serenity.DateEditor;
+        Cantidad: Serenity.IntegerEditor;
+        ConGarantia: Serenity.BooleanEditor;
+        Garantia: Serenity.DecimalEditor;
+        Neto: Serenity.DecimalEditor;
+        Iva: Serenity.DecimalEditor;
+        Total: Serenity.DecimalEditor;
         DetallesMessage: StaticTextBlock;
+        Rut: Serenity.MaskedEditor;
+        RazonSocial: Serenity.StringEditor;
+        NombreFantasia: Serenity.StringEditor;
+        Direccion: Serenity.StringEditor;
+        ClienteCiudad: Serenity.StringEditor;
+        Telefono: Serenity.StringEditor;
+        EMail: Serenity.EmailAddressEditor;
         ConfirmacionMessage: StaticTextBlock;
         ConfirmacionContext: StaticTextBlock;
     }
@@ -496,6 +513,14 @@ declare namespace Rental_SPA.Gestion {
         Neto?: number;
         Iva?: number;
         Total?: number;
+        Cantidad?: number;
+        Rut?: string;
+        RazonSocial?: string;
+        NombreFantasia?: string;
+        Direccion?: string;
+        ClienteCiudad?: string;
+        Telefono?: string;
+        EMail?: string;
     }
     namespace ArriendoWizardRow {
         const idProperty = "Id";
@@ -518,7 +543,15 @@ declare namespace Rental_SPA.Gestion {
             FechaDevolucion = "FechaDevolucion",
             Neto = "Neto",
             Iva = "Iva",
-            Total = "Total"
+            Total = "Total",
+            Cantidad = "Cantidad",
+            Rut = "Rut",
+            RazonSocial = "RazonSocial",
+            NombreFantasia = "NombreFantasia",
+            Direccion = "Direccion",
+            ClienteCiudad = "ClienteCiudad",
+            Telefono = "Telefono",
+            EMail = "EMail"
         }
     }
 }
@@ -546,15 +579,17 @@ declare namespace Rental_SPA.Gestion {
 }
 declare namespace Rental_SPA.Gestion {
     interface ArriendosForm {
+        Id: Serenity.StringEditor;
         DireccionObra: Serenity.StringEditor;
         Region: Serenity.IntegerEditor;
         Ciudad: Serenity.StringEditor;
-        IdCliente: Serenity.IntegerEditor;
-        IdProducto: Serenity.IntegerEditor;
-        Garantia: Serenity.DecimalEditor;
-        ConGarantia: Serenity.BooleanEditor;
+        IdCliente: Serenity.LookupEditor;
+        IdProducto: Serenity.LookupEditor;
         FechaInicio: Serenity.DateEditor;
         FechaDevolucion: Serenity.DateEditor;
+        Cantidad: Serenity.IntegerEditor;
+        ConGarantia: Serenity.BooleanEditor;
+        Garantia: Serenity.DecimalEditor;
         Neto: Serenity.DecimalEditor;
         Iva: Serenity.DecimalEditor;
         Total: Serenity.DecimalEditor;
@@ -573,6 +608,7 @@ declare namespace Rental_SPA.Gestion {
         Ciudad?: string;
         IdCliente?: number;
         IdProducto?: number;
+        Cantidad?: number;
         Garantia?: number;
         ConGarantia?: boolean;
         FechaInicio?: string;
@@ -596,6 +632,7 @@ declare namespace Rental_SPA.Gestion {
             Ciudad = "Ciudad",
             IdCliente = "IdCliente",
             IdProducto = "IdProducto",
+            Cantidad = "Cantidad",
             Garantia = "Garantia",
             ConGarantia = "ConGarantia",
             FechaInicio = "FechaInicio",
@@ -690,13 +727,13 @@ declare namespace Rental_SPA.Gestion {
 }
 declare namespace Rental_SPA.Gestion {
     interface ClientesForm {
-        Rut: Serenity.StringEditor;
+        Rut: Serenity.MaskedEditor;
         RazonSocial: Serenity.StringEditor;
         NombreFantasia: Serenity.StringEditor;
         Direccion: Serenity.StringEditor;
         Ciudad: Serenity.StringEditor;
         Telefono: Serenity.StringEditor;
-        EMail: Serenity.StringEditor;
+        EMail: Serenity.EmailAddressEditor;
     }
     class ClientesForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -717,8 +754,10 @@ declare namespace Rental_SPA.Gestion {
     }
     namespace ClientesRow {
         const idProperty = "Id";
-        const nameProperty = "Rut";
+        const nameProperty = "RazonSocial";
         const localTextPrefix = "Gestion.Clientes";
+        const lookupKey = "Gestion.Clientes";
+        function getLookup(): Q.Lookup<ClientesRow>;
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";
         const readPermission = "Administration:General";
@@ -850,12 +889,15 @@ declare namespace Rental_SPA.Gestion {
         IdTipoArriendo?: number;
         IdTipoArriendoTipo?: string;
         Descripcion?: string;
+        IdTipoArriendoCotizacion?: number;
         ProductosDet?: ProductoDetalleRow[];
     }
     namespace ProductosRow {
         const idProperty = "Id";
         const nameProperty = "Nombre";
         const localTextPrefix = "Gestion.Productos";
+        const lookupKey = "Gestion.Productos";
+        function getLookup(): Q.Lookup<ProductosRow>;
         const deletePermission = " Administration:General";
         const insertPermission = " Administration:General";
         const readPermission = "*";
@@ -872,6 +914,7 @@ declare namespace Rental_SPA.Gestion {
             IdTipoArriendo = "IdTipoArriendo",
             IdTipoArriendoTipo = "IdTipoArriendoTipo",
             Descripcion = "Descripcion",
+            IdTipoArriendoCotizacion = "IdTipoArriendoCotizacion",
             ProductosDet = "ProductosDet"
         }
     }
@@ -899,9 +942,16 @@ declare namespace Rental_SPA.Gestion {
     }
 }
 declare namespace Rental_SPA.Gestion {
+    enum TipoArriendoCotizacion {
+        Unidad = 1,
+        Dia = 2
+    }
+}
+declare namespace Rental_SPA.Gestion {
     interface TipoArriendoForm {
         Tipo: Serenity.StringEditor;
         Codigo: Serenity.StringEditor;
+        Cotizacion: Serenity.EnumEditor;
         Detalles: Serenity.CheckLookupEditor;
         Foto: Serenity.ImageUploadEditor;
     }
@@ -918,6 +968,7 @@ declare namespace Rental_SPA.Gestion {
         Codigo?: string;
         Detalles?: string;
         Foto?: string;
+        Cotizacion?: number;
     }
     namespace TipoArriendoRow {
         const idProperty = "Id";
@@ -934,7 +985,8 @@ declare namespace Rental_SPA.Gestion {
             Tipo = "Tipo",
             Codigo = "Codigo",
             Detalles = "Detalles",
-            Foto = "Foto"
+            Foto = "Foto",
+            Cotizacion = "Cotizacion"
         }
     }
 }
@@ -2106,7 +2158,10 @@ declare namespace Rental_SPA.Gestion {
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected form: ArriendoWizardForm;
+        private tipoArriendoCotizacion;
         constructor(opt?: any);
+        private calculate;
+        protected getInitialEntity(): ArriendoWizardRow;
         protected next(toStep: number): void;
         protected confirmCancel(e: JQueryEventObject): void;
         protected finish(): void;

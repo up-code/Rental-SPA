@@ -12,8 +12,13 @@
 
     export namespace ClientesRow {
         export const idProperty = 'Id';
-        export const nameProperty = 'Rut';
+        export const nameProperty = 'RazonSocial';
         export const localTextPrefix = 'Gestion.Clientes';
+        export const lookupKey = 'Gestion.Clientes';
+
+        export function getLookup(): Q.Lookup<ClientesRow> {
+            return Q.getLookup<ClientesRow>('Gestion.Clientes');
+        }
         export const deletePermission = 'Administration:General';
         export const insertPermission = 'Administration:General';
         export const readPermission = 'Administration:General';

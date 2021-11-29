@@ -1,15 +1,18 @@
 ﻿@inject Serenity.ITextLocalizer Localizer
 @inject Serenity.Web.IDynamicScriptManager DynamicScriptManager
+@model int?
 
 @{
     ViewData["Title"] = Localizer.Get("Db.Gestion.Categorias.EntityPlural");
     Layout = MVC.Views.Shared._LayoutSitio;
 }
 
-
 @section Head {
-   @Html.StyleBundle("Base")
-   @Html.StyleBundle("Site")
+    @Html.StyleBundle("Base")
+    @Html.StyleBundle("Site")
+
+    @Html.ScriptBundle("Base")
+    @Html.ScriptBundle("Site")
 }
 
 <section class="d-no--ne d-lg-block" style="padding:0;">
@@ -19,35 +22,36 @@
 </section>
 
 <div id="sucessAppointment" style="display: none; text-align: center;  margin: 10px 20px;  height: 600px;">
-    <h1>¡Gracias! Se ha completado el proceso de cita.</h1>
+    <h1>¡Gracias! Se ha completado el proceso de arriendo.</h1>
     <br />
     <div class="buttons" style="text-align: center; margin: 10px 20px;">
         <button id="Rental_SPA_Gestion_ArriendoWizardDialog0_SucessButton" class="btn btn-primary" formnovalidate=""><span class="txt">Volver</span> </button>
     </div>
 </div>
 
-
 @section Scripts {
 
- @Html.LocalTextScript("Site")
+    @Html.LocalTextScript("Site")
 
-<script type="text/javascript">
+    <script type="text/javascript">
     jQuery(function () {
 
-        var dlg = new Rental_SPA.Gestion.ArriendoWizardDialog({ container: 'wizard' });
+        @Html.Raw(DynamicScriptManager.GetScriptText("Lookup.Administration.Language"))
+        @Html.Raw(DynamicScriptManager.GetScriptText("RegisteredScripts"))
+
+        var dlg = new Rental_SPA.Gestion.ArriendoWizardDialog({ container: 'wizard', idProducto: @Model });
         dlg.element.one('dialogclose panelclose', () => {
             // navigate to order page, otherwise we'll have an empty page after dialog closes
             // window.location.href = Q.resolveUrl("~/");
             $('#sucessAppointment').show();
         });
+        dlg.step = 0;
+        dlg.moveToStep(1);
         dlg.dialogOpen();
 
         $('#Rental_SPA_Gestion_ArriendoWizardDialog0_SucessButton').on('click', (e) => { window.location.href = Q.resolveUrl("~/"); });
 
-        @Html.Raw(DynamicScriptManager.GetScriptText("Lookup.Administration.Language"))
-        @Html.Raw(DynamicScriptManager.GetScriptText("RegisteredScripts"))
-
     });
 
-</script>
+    </script>
 }

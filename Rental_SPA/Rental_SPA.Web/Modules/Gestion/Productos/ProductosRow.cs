@@ -2,6 +2,7 @@
 using Serenity.ComponentModel;
 using Serenity.Data;
 using Serenity.Data.Mapping;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace Rental_SPA.Gestion.Entities
     [DisplayName("Productos"), InstanceName("Productos")]
     [ReadPermission("*")]
     [ModifyPermission(" Administration:General")]
+    [LookupScript(Permission = "*")]
     public sealed class ProductosRow : Row<ProductosRow.RowFields>, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity, IdProperty]
@@ -87,6 +89,13 @@ namespace Rental_SPA.Gestion.Entities
             set => fields.IdTipoArriendoTipo[this] = value;
         }
 
+        [DisplayName("Cotizacion"), Expression("T5.[Cotizacion]")]
+        public Int16? IdTipoArriendoCotizacion
+        {
+            get => fields.IdTipoArriendoCotizacion[this];
+            set => fields.IdTipoArriendoCotizacion[this] = value;
+        }
+
         [DisplayName("Descripción"), Column("Descripcion")]
         public String Descripcion
         {
@@ -121,6 +130,7 @@ namespace Rental_SPA.Gestion.Entities
             public Int32Field IdTipoArriendo;
             public StringField IdTipoArriendoTipo;
             public StringField Descripcion;
+            public Int16Field IdTipoArriendoCotizacion;
 
             public RowListField<ProductoDetalleRow> ProductosDet;
         }

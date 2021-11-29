@@ -12,6 +12,7 @@ namespace Rental_SPA.Gestion.Entities
     [DisplayName("Clientes"), InstanceName("Clientes")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
+    [LookupScript(Permission = "*")]
     public sealed class ClientesRow : Row<ClientesRow.RowFields>, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity, IdProperty]
@@ -21,14 +22,14 @@ namespace Rental_SPA.Gestion.Entities
             set => fields.Id[this] = value;
         }
 
-        [DisplayName("Rut"), Size(12), NotNull, QuickSearch, NameProperty]
+        [DisplayName("Rut"), Size(12), NotNull, QuickSearch]
         public String Rut
         {
             get => fields.Rut[this];
             set => fields.Rut[this] = value;
         }
 
-        [DisplayName("Razon Social"), Column("Razon_Social"), Size(350), NotNull]
+        [DisplayName("Razon Social"), Column("Razon_Social"), Size(350), NotNull, NameProperty]
         public String RazonSocial
         {
             get => fields.RazonSocial[this];

@@ -1,7 +1,7 @@
 ﻿
 namespace Rental_SPA.Gestion {
 
-    @Serenity.Decorators.registerClass()
+    @Serenity.Decorators.registerClass()    
     export class TipoArriendoDialog extends Serenity.EntityDialog<TipoArriendoRow, any> {
         protected getFormKey() { return TipoArriendoForm.formKey; }
         protected getIdProperty() { return TipoArriendoRow.idProperty; }

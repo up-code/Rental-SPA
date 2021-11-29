@@ -8116,6 +8116,9 @@ section.content > .s-DataGrid {
 .s-Sitio-HistoriaDialog .caption {
   width: 150px;
 }
+.s-Rental_SPA-Gestion-ArriendoWizardDialog .caption {
+  width: 150px;
+}
 .s-Gestion-ProductosDialog > .size {
   width: 650px;
 }
@@ -8157,6 +8160,10 @@ section.content > .s-DataGrid {
 }
 .s-Gestion-TiposAdicionalesDialog .caption {
   width: 150px;
+}
+.decimalQ,
+.integerQ {
+  text-align: right;
 }
 .wizard-horz {
   border: 1px solid #d4d4d4;

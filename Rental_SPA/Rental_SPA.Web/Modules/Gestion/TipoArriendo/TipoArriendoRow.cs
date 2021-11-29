@@ -44,6 +44,7 @@ namespace Rental_SPA.Gestion.Entities
             set => fields.Detalles[this] = value;
         }
         [DisplayName("Foto"), NotNull]
+        
         [ImageUploadEditor]
         public String Foto
         {
@@ -51,6 +52,12 @@ namespace Rental_SPA.Gestion.Entities
             set => fields.Foto[this] = value;
         }
 
+        [DisplayName("Cotización"), NotNull, LookupInclude]
+        public Int16? Cotizacion
+        {
+            get => fields.Cotizacion[this];
+            set => fields.Cotizacion[this] = value;
+        }
 
         public TipoArriendoRow()
             : base()
@@ -69,6 +76,7 @@ namespace Rental_SPA.Gestion.Entities
             public StringField Codigo;
             public StringField Detalles;
             public StringField Foto;
+            public Int16Field Cotizacion;
         }
     }
 }

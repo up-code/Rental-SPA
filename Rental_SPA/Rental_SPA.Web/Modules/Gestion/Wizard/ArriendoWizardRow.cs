@@ -24,39 +24,47 @@ namespace Rental_SPA.Gestion.Entities
             set => fields.Id[this] = value;
         }
 
-        [DisplayName("Direccion Obra"), Column("Direccion_Obra"), Size(250),  QuickSearch, NameProperty]
+        [DisplayName("Dirección"), Column("Direccion_Obra"), Size(250), NotNull, QuickSearch, NameProperty]
         public String DireccionObra
         {
             get => fields.DireccionObra[this];
             set => fields.DireccionObra[this] = value;
         }
 
-        [DisplayName("Region")]
+        [DisplayName("Region"), NotNull]
         public Int32? Region
         {
             get => fields.Region[this];
             set => fields.Region[this] = value;
         }
 
-        [DisplayName("Ciudad"), Size(100)]
+        [DisplayName("Ciudad"), Size(100), NotNull]
         public String Ciudad
         {
             get => fields.Ciudad[this];
             set => fields.Ciudad[this] = value;
         }
 
-        [DisplayName("Id Cliente")]
+        [DisplayName("Cliente")]
         public Int32? IdCliente
         {
             get => fields.IdCliente[this];
             set => fields.IdCliente[this] = value;
         }
 
-        [DisplayName("Id Producto")]
+        [DisplayName("Producto"), NotNull]
         public Int32? IdProducto
         {
             get => fields.IdProducto[this];
             set => fields.IdProducto[this] = value;
+        }
+
+
+        [DisplayName("Cantidad"), NotNull]
+        public Int32? Cantidad
+        {
+            get => fields.Cantidad[this];
+            set => fields.Cantidad[this] = value;
         }
 
         [DisplayName("Garantia")]
@@ -73,14 +81,14 @@ namespace Rental_SPA.Gestion.Entities
             set => fields.ConGarantia[this] = value;
         }
 
-        [DisplayName("Fecha Inicio"), Column("Fecha_Inicio")]
+        [DisplayName("Fecha Inicio"), Column("Fecha_Inicio"), NotNull]
         public DateTime? FechaInicio
         {
             get => fields.FechaInicio[this];
             set => fields.FechaInicio[this] = value;
         }
 
-        [DisplayName("Fecha Devolucion"), Column("Fecha_Devolucion")]
+        [DisplayName("Fecha Devolución"), Column("Fecha_Devolucion"), NotNull]
         public DateTime? FechaDevolucion
         {
             get => fields.FechaDevolucion[this];
@@ -108,6 +116,57 @@ namespace Rental_SPA.Gestion.Entities
             set => fields.Total[this] = value;
         }
 
+        #region Cliente
+        [DisplayName("Rut"), Size(12), NotNull, NotMapped]
+        public String Rut
+        {
+            get => fields.Rut[this];
+            set => fields.Rut[this] = value;
+        }
+
+        [DisplayName("Razon Social"), Column("Razon_Social"), Size(350), NotNull, NotMapped]
+        public String RazonSocial
+        {
+            get => fields.RazonSocial[this];
+            set => fields.RazonSocial[this] = value;
+        }
+
+        [DisplayName("Nombre Fantasia"), Column("Nombre_Fantasia"), Size(250), NotMapped]
+        public String NombreFantasia
+        {
+            get => fields.NombreFantasia[this];
+            set => fields.NombreFantasia[this] = value;
+        }
+
+        [DisplayName("Direccion"), Size(350), NotNull, NotMapped]
+        public String Direccion
+        {
+            get => fields.Direccion[this];
+            set => fields.Direccion[this] = value;
+        }
+
+        [DisplayName("Ciudad"), Size(200), NotNull, NotMapped]
+        public String ClienteCiudad
+        {
+            get => fields.ClienteCiudad[this];
+            set => fields.ClienteCiudad[this] = value;
+        }
+
+        [DisplayName("Telefono"), Size(15), NotNull, NotMapped]
+        public String Telefono
+        {
+            get => fields.Telefono[this];
+            set => fields.Telefono[this] = value;
+        }
+
+        [DisplayName("E Mail"), Column("E-mail"), Size(150), NotNull, NotMapped]
+        public String EMail
+        {
+            get => fields.EMail[this];
+            set => fields.EMail[this] = value;
+        }
+        #endregion
+
 
         public ArriendoWizardRow()
             : base()
@@ -134,6 +193,16 @@ namespace Rental_SPA.Gestion.Entities
             public DoubleField Neto;
             public DoubleField Iva;
             public DoubleField Total;
+
+            public Int32Field Cantidad;
+
+            public StringField Rut;
+            public StringField RazonSocial;
+            public StringField NombreFantasia;
+            public StringField Direccion;
+            public StringField ClienteCiudad;
+            public StringField Telefono;
+            public StringField EMail;
         }
     }
 }

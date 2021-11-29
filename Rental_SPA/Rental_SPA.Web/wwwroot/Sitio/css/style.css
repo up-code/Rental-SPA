@@ -1884,4 +1884,6 @@ a {
     }
 }
 
-
+.decimalQ, .integerQ {
+    text-align: right;
+}

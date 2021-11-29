@@ -1,7 +1,7 @@
 ﻿namespace Rental_SPA.Gestion {
     interface productoParameters {
         Producto: ProductosRow
-    }   
+    }
     export class ProductoDetalle extends React.Component<productoParameters>{
 
         //private detalles: IdDetalle[];
@@ -22,7 +22,7 @@
                                 <li className="active">{this.props.Producto.Nombre}</li>
                             </ul>
                         </div>
-                        <div className="box-position" style={{ backgroundImage: 'url("/upload/' + this.props.Producto.Foto + '")'}}></div>
+                        <div className="box-position" style={{ backgroundImage: 'url("/upload/' + this.props.Producto.Foto + '")' }}></div>
                     </div>
                 </section>
 
@@ -39,16 +39,16 @@
                                             <h5 dangerouslySetInnerHTML={{ __html: this.props.Producto.Descripcion }}>{ }</h5>
 
                                         </div>
-                                       
+
 
                                     </div>
-                                   
+
                                 </div>
                             </div>
 
-                            
+
                         </div>
-                        <div className="row justify-content-center" style={{ marginTop:'4rem' }}>
+                        <div className="row justify-content-center" style={{ marginTop: '4rem' }}>
                             <h3 className="text-center"> Atributos del Producto</h3>
                             <div className="col-lg-12">
                                 <div className="col-xs-6 mt-5">
@@ -70,7 +70,7 @@
                                 </div>
                             </div>
 
-                      
+
                         </div>
                         <div className="row mt-5 text-center">
 
@@ -79,17 +79,21 @@
                                 <p>Cantidad</p>
                             </div>
                             <div className="col-sm">
-                                <h3>{formatter.format(this.props.Producto.Precio).replace("CLP", "$").replace(",",".")}</h3>
+                                <h3>{formatter.format(this.props.Producto.Precio).replace("CLP", "$").replace(",", ".")}</h3>
                                 <p>Valor Arriendo</p>
                             </div>
                             <div className="col-sm">
-                                <h3>{formatter.format(this.props.Producto.Garantia).replace("CLP", "$").replace(",",".")}</h3>
+                                <h3>{formatter.format(this.props.Producto.Garantia).replace("CLP", "$").replace(",", ".")}</h3>
                                 <p>Garantía</p>
                             </div>
                         </div>
 
-                       
-                        
+                        <div className="row mt-5 text-center">
+                            <button type="button" className="btn btn-info" onClick={(e) => {
+                                e.preventDefault();
+                                window.location.href = `/wizard/${this.props.Producto.Id}`;
+                            }}>Arrendar</button>
+                        </div>
 
                     </div>
                 </section>

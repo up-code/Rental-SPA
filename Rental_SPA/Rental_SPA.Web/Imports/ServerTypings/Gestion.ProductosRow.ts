@@ -11,6 +11,7 @@
         IdTipoArriendo?: number;
         IdTipoArriendoTipo?: string;
         Descripcion?: string;
+        IdTipoArriendoCotizacion?: number;
         ProductosDet?: ProductoDetalleRow[];
     }
 
@@ -18,6 +19,11 @@
         export const idProperty = 'Id';
         export const nameProperty = 'Nombre';
         export const localTextPrefix = 'Gestion.Productos';
+        export const lookupKey = 'Gestion.Productos';
+
+        export function getLookup(): Q.Lookup<ProductosRow> {
+            return Q.getLookup<ProductosRow>('Gestion.Productos');
+        }
         export const deletePermission = ' Administration:General';
         export const insertPermission = ' Administration:General';
         export const readPermission = '*';
@@ -35,6 +41,7 @@
             IdTipoArriendo = "IdTipoArriendo",
             IdTipoArriendoTipo = "IdTipoArriendoTipo",
             Descripcion = "Descripcion",
+            IdTipoArriendoCotizacion = "IdTipoArriendoCotizacion",
             ProductosDet = "ProductosDet"
         }
     }

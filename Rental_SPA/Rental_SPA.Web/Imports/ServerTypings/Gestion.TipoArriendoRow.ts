@@ -5,6 +5,7 @@
         Codigo?: string;
         Detalles?: string;
         Foto?: string;
+        Cotizacion?: number;
     }
 
     export namespace TipoArriendoRow {
@@ -26,7 +27,8 @@
             Tipo = "Tipo",
             Codigo = "Codigo",
             Detalles = "Detalles",
-            Foto = "Foto"
+            Foto = "Foto",
+            Cotizacion = "Cotizacion"
         }
     }
 }

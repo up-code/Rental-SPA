@@ -32,7 +32,7 @@
                 <h1 class="text-light">
                     <a href="/">
                         @*<span>Rental SPA</span>*@
-                        <img src="~/Sitio/img/logorental.png"/>
+                        <img src="~/Sitio/img/logorental.png" />
                     </a>
                 </h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
@@ -96,9 +96,9 @@
                             <li>
                                 <i class="bx bx-chevron-right"></i> <a href="#services">Servicios</a>
                             </li>
-                             <li>
-                              <i class="bx bx-chevron-right"></i> <a href="#clients">Nuestros Clientes</a>
-                            </li> 
+                            <li>
+                                <i class="bx bx-chevron-right"></i> <a href="#clients">Nuestros Clientes</a>
+                            </li>
                             <li>
                                 <i class="bx bx-chevron-right"></i> <a href="#contact">Contacto</a>
                             </li>
@@ -125,8 +125,10 @@
 
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-    @Html.ScriptBundle("Base")
-    @*@Html.ScriptBundle("Baselight")*@
+    @RenderSection("ScriptsBefore", required: false)
+
+    @*@Html.ScriptBundle("Base")*@
+    @Html.ScriptBundle("Baselight")
     @Html.ScriptBundle("Sitio")
     @Html.ScriptBundle("Sitelight")
 
